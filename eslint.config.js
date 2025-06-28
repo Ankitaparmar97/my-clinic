@@ -6,8 +6,10 @@ import tseslint from 'typescript-eslint';
 import prettier from 'eslint-plugin-prettier';
 import checkFile from 'eslint-plugin-check-file';
 
-export default tseslint.config(
-  { ignores: ['dist', 'node_modules'] },
+export default tseslint.config([
+  tseslint.config({
+    ignores: ['dist', 'node_modules', '.vscode', '*.json', '*.lock'],
+  }),
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
@@ -42,7 +44,6 @@ export default tseslint.config(
         'error',
         {
           '**/*.{ts,tsx}': 'PASCAL_CASE',
-          '**/{index,main,abc}.{ts,tsx}': 'CAMEL_CASE', // allow index.tsx to be lowercase
         },
       ],
 
@@ -56,9 +57,9 @@ export default tseslint.config(
     },
   },
   {
-    files: ['**/index.tsx', '**/main.tsx'],
+    files: ['**/index.tsx', '**/main.tsx', '**/*.config.{ts,json}', '**/*.json'],
     rules: {
       'check-file/filename-naming-convention': 'off',
     },
   },
-);
+]);
