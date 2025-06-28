@@ -6,9 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . --ext .ts,.tsx",
     "preview": "vite preview",
-    "format": "prettier --write ."
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "lint:naming": "eslint . --rule 'check-file/filename-naming-convention:error' --ext .ts,.tsx",
+    "tsc": "tsc",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run type-check && npm run lint && npm run format:check",
+    "clean": "rm -rf dist .tsbuildinfo"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -26,10 +33,10 @@
     "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.30.0",
+    "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-check-file": "^3.3.0",
     "eslint-plugin-prettier": "^5.5.1",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
+    "eslint-plugin-react-x": "^1.52.2",
     "globals": "^15.15.0",
     "prettier": "^3.6.2",
     "typescript": "~5.7.2",
