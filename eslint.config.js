@@ -1,28 +1,63 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
+import js from '@eslint/js';
+import globals from 'globals';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import tseslint from 'typescript-eslint';
+import prettier from 'eslint-plugin-prettier';
+import checkFile from 'eslint-plugin-check-file';
+import reactX from 'eslint-plugin-react-x';
 
-export default tseslint.config(
-  { ignores: ['dist'] },
+export default tseslint.config([
+  tseslint.config({
+    ignores: ['dist', 'node_modules', '.vscode', '*.json', '*.lock'],
+  }),
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.recommendedTypeChecked,
+      reactX.configs['recommended-typescript'],
+    ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
     },
     plugins: {
-      'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      'check-file': checkFile,
+      prettier,
     },
     rules: {
-      ...reactHooks.configs.recommended.rules,
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      'prettier/prettier': 'warn',
+
+      // File name must be PascalCase
+      'check-file/filename-naming-convention': [
+        'error',
+        {
+          '**/*.{ts,tsx}': 'PASCAL_CASE',
+        },
       ],
+
+      // Folder naming convention must be kebab-case
+      'check-file/folder-naming-convention': [
+        'error',
+        {
+          '**/': 'KEBAB_CASE',
+        },
+      ],
+
+      // Disable fallback rules that duplicate TS-aware versions
+      'no-unused-vars': 'off',
     },
   },
-)
+  {
+    files: ['**/index.tsx', '**/main.tsx', '**/*.config.{ts,json}', '**/*.json'],
+    rules: {
+      'check-file/filename-naming-convention': 'off',
+    },
+  },
+]);
