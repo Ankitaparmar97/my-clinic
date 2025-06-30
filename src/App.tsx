@@ -2,9 +2,9 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import "./App.css";
-import Header2 from './Header2'
-import Header from './Header'
-import Nav from './src/Nav';
+import Header2 from './components/Header2'
+import Header from './components/Header'
+import Nav from './components/Nav';
 // import Button from './src/Button';
 // import DentalServices from './src/Dentalservices';
 // import AboutUs from "./src/AboutUs";
