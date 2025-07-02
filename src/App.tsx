@@ -1,9 +1,9 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import "./App.css";
-import Header2 from './components/Header2'
-import Header from './components/Header'
+import './App.css';
+import Header2 from './components/Header2';
+import Header from './components/Header';
 import Nav from './components/Nav';
 // import Button from './src/Button';
 // import DentalServices from './src/Dentalservices';
@@ -38,19 +38,17 @@ import Nav from './components/Nav';
 //   ]
 // );
 function App() {
-
   return (
     <>
-    {/* <div>
+      {/* <div>
       <RouterProvider router={router} />
     </div> */}
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: "stretch" }}>
-      <Header />
-      <Header2 />
-      {/* <Nav /> */}
-
-    </div>
-     <Nav />
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch' }}>
+        <Header />
+        <Header2 />
+        {/* <Nav /> */}
+      </div>
+      <Nav />
       {/* <div className='image-container'>
     </div>
     <div>
@@ -72,7 +70,7 @@ function App() {
       <Blog/> 
     </div> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

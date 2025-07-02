@@ -1,4 +1,3 @@
-import * as react from 'react';
 function Blog() {
   return (
     <div>
