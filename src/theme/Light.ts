@@ -6,14 +6,14 @@ const lightTheme = createTheme({
     mode: 'light',
     primary: {
       main: '#2eb437',
-      light: '#63a4ff',
-      dark: '#004ba0',
+      light: '#57c35f',
+      dark: '#207d26',
       contrastText: '#fff',
     },
     secondary: {
-      main: '#121212',
-      light: '#d05ce3',
-      dark: '#6a0080',
+      main: '#ff8a33',
+      light: '#ffa15b',
+      dark: '#b26023',
       contrastText: '#fff',
     },
     error: {
