@@ -7,6 +7,7 @@ The following make commands help streamline development tasks:
 | Command             | Description                                                           |
 | ------------------- | --------------------------------------------------------------------- |
 | `make up`           | 🚀 Starts the Vite development server.                                |
+| `make install`      | 📦 Install dependencies.                                              |
 | `make build`        | 🏗️ Builds the project using `tsc` and `vite`.                         |
 | `make type-check`   | 🧠 Runs TypeScript type-checking without emitting files.              |
 | `make lint`         | 🧹 Lints the codebase with ESLint.                                    |
