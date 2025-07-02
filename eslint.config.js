@@ -55,7 +55,7 @@ export default tseslint.config([
     },
   },
   {
-    files: ['**/index.tsx', '**/main.tsx', '**/*.config.{ts,json}', '**/*.json'],
+    files: ['**/index.{tsx,ts}', '**/main.tsx', '**/*.config.{ts,json}', '**/*.json'],
     rules: {
       'check-file/filename-naming-convention': 'off',
     },
