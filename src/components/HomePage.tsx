@@ -5,12 +5,12 @@ import AboutUs from './AboutUs';
 import Gallery from './Gallery';
 import ContactUs from './ContactUs';
 import Blog from './Blog';
-import Example from './Example';
+import Carouselicon from './CarouselIcon';
 
-function Home() {
+function HomePage() {
   return (
     <div>
-      <Example />
+      <Carouselicon />
       <div>
         <h1 style={{ color: 'black' }}>Dental Clinic</h1>
       </div>
@@ -37,4 +37,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

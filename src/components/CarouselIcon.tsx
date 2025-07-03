@@ -2,7 +2,6 @@ import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
 import Button from './Button';
 import { motion } from 'framer-motion';
-// import { Calculate } from '@mui/icons-material';
 
 function Example() {
   const items: CarouselItem[] = [
@@ -16,7 +15,7 @@ function Example() {
       name: 'Implant Center',
       description:
         'A dental implant is a surgical component that interfaces with the bone of the jaw or skull to support a dental prosthesis such as a crown.',
-      image: 'homeImage.jpg',
+      image: 'l_homeimage.jpg',
     },
     {
       name: 'Root Canal',
@@ -28,17 +27,21 @@ function Example() {
       name: 'Teeth whitining',
       description:
         'A dental implant is a surgical component that interfaces with the bone of the jaw or skull to support a dental prosthesis such as a crown.',
-      image: 'l_denture.jpg',
+      image: 'l_teeth2.jpg',
     },
   ];
 
   return (
     <Carousel
       animation="slide"
-      // duration={500}
-      // interval={3000}
       indicators={false}
       navButtonsAlwaysVisible={true}
+      navButtonsProps={{
+        style: {
+          backgroundColor: 'white',
+          color: 'black',
+        },
+      }}
       swipe={false}
       fullHeightHover={false}
       cycleNavigation={true}
