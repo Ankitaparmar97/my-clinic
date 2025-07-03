@@ -55,9 +55,7 @@ function ResponsiveAppBar() {
               color: 'inherit',
               textDecoration: 'none',
             }}
-          >
-        
-          </Typography>
+          ></Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -109,9 +107,7 @@ function ResponsiveAppBar() {
               color: 'inherit',
               textDecoration: 'none',
             }}
-          >
-            
-          </Typography>
+          ></Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -154,10 +150,8 @@ function ResponsiveAppBar() {
           </Box>
         </Toolbar>
       </Container>
-    
     </AppBar>
     // </div>
   );
-  
 }
 export default ResponsiveAppBar;
