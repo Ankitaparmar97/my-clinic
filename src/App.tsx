@@ -1,6 +1,6 @@
-import './App.css';
-import Header2 from './components/Header2';
-import Header from './components/Header';
+// import './App.css';
+import Header2 from './components/Header';
+import Header from './components/Banner';
 import Nav from './components/Nav';
 
 function App() {

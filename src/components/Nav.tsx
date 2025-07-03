@@ -3,13 +3,12 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { NavLink, Routes, Route } from 'react-router-dom';
-import Home from './Home';
+import Home from './HomePage';
 import AboutUs from './AboutUs';
 import Gallery from './Gallery';
 import Blog from './Blog';
 import ContactUs from './ContactUs';
 import DentalServices from './Dentalservices';
-// import { Button } from '@mui/material';
 import Button from './Button';
 
 export default function ColorTabs() {
