@@ -56,26 +56,7 @@ type CarouselItem = {
   image: string;
 };
 
-// function Item({ item }: { item: CarouselItem }) {
-//     return (
-//         <Paper style={{ padding: 20, textAlign: 'center' }}>
-//             <img
-//                 src={item.image}
-//                 alt={item.name}
-//                 style={{ width: '100%', height: 'auto', borderRadius: 8 }}
-//             />
-//             <h2>{item.name}</h2>
-//             <p>{item.description}</p>
-//             <Button variant="contained" color="primary">
-//                 Check it out!
-//             </Button>
-//         </Paper>
-//     );
-// }
-
 function Item({ item }: { item: CarouselItem }) {
-  // const ref = useRef(null);
-  // const isInView = useInView(ref, { amount: 0 });
   return (
     <Paper
       style={{
@@ -93,20 +74,6 @@ function Item({ item }: { item: CarouselItem }) {
         borderRadius: 8,
       }}
     >
-      {/* <div
-                style={{
-                    background: 'rgba(0, 0, 0, 0.5)',
-                    padding: '20px',
-                    borderRadius: '0 0 8px 8px',
-                }}
-            > */}
-      {/* <h2>{item.name}</h2>
-                <p>{item.description}</p> */}
-      {/* <Button variant="contained" color="primary">
-                    Check it out!
-                </Button> */}
-      {/* </div> */}
-      {/* <Fade in={true} timeout={1000}> */}
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -124,8 +91,6 @@ function Item({ item }: { item: CarouselItem }) {
       >
         {item.name}
       </motion.h1>
-      {/* </Fade>  */}
-      {/* <Fade in={true} timeout={1500}> */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -142,18 +107,6 @@ function Item({ item }: { item: CarouselItem }) {
       >
         {item.description}
       </motion.p>
-      {/* </Fade>    */}
-      {/* <p style={
-              {display:'flex',
-               flexDirection:'row',
-               justifyContent:'flex-start', 
-               textAlign:'left'
-              }
-            }>
-              "A dental implant is a surgical component that interfaces with<br/>
-               the bone of the jaw or skull to support a dental prosthesis such as a crown." */}
-      {/* </p> */}
-      {/* <Fade in={true} timeout={2000}>  */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -162,7 +115,6 @@ function Item({ item }: { item: CarouselItem }) {
       >
         <Button />
       </motion.div>
-      {/* </Fade>      */}
     </Paper>
   );
 }

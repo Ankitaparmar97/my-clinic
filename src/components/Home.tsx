@@ -10,24 +10,19 @@ import Example from './Example';
 function Home() {
   return (
     <div>
-      {/* <div style={{ display: 'flex' }}>
-            <Nav />
-            <Button/>
-          </div> */}
       <Example />
       <div>
         <h1 style={{ color: 'black' }}>Dental Clinic</h1>
       </div>
-      {/* <div>
-            <DentalServices/>
-          </div> */}
       <div>
         <AboutUs />
       </div>
       <div>
         <Gallery />
       </div>
-      <div>{<ContactUs />}</div>
+      <div>
+        <ContactUs />
+      </div>
       <div>
         <Blog />
       </div>
