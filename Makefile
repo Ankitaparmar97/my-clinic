@@ -7,7 +7,7 @@ up:
 
 install:
 	@echo "📦 Installing dependencies..."
-	npm install
+	npm install --force
 
 # Build the project
 build:
