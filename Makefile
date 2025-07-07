@@ -5,6 +5,10 @@ up:
 	@echo "🚀 Starting development server..."
 	npm run dev
 
+install:
+	@echo "📦 Installing dependencies..."
+	npm install --force
+
 # Build the project
 build:
 	@echo "🏗️  Building the project..."

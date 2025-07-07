@@ -15,6 +15,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { useTheme } from '@mui/material/styles';
 
 // const Search = styled('div')(({ theme }) => ({
 //   position: 'relative',
@@ -57,6 +58,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 // }));
 
 export default function PrimarySearchAppBar() {
+  const theme = useTheme();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -153,7 +155,7 @@ export default function PrimarySearchAppBar() {
   return (
     // <div style={{ position: 'fixed'}}>
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: '#006400' }}>
+      <AppBar position="static" sx={{ backgroundColor: theme.palette.secondary.main }}>
         <Toolbar>
           <IconButton
             size="large"
