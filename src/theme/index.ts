@@ -1,5 +1,5 @@
 // theme/index.ts
-import lightTheme from './Light';
-import darkTheme from './Dark';
+import lightTheme from './light';
+import darkTheme from './dark';
 
 export { lightTheme, darkTheme };
