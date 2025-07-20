@@ -2,6 +2,7 @@ import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
 import Button from './Button';
 import { motion } from 'framer-motion';
+import { useTheme } from '@mui/material/styles';
 
 function Example() {
   const items: CarouselItem[] = [
@@ -60,6 +61,7 @@ type CarouselItem = {
 };
 
 function Item({ item }: { item: CarouselItem }) {
+  const theam = useTheme();
   return (
     <Paper
       style={{
@@ -87,7 +89,7 @@ function Item({ item }: { item: CarouselItem }) {
           flexDirection: 'row',
           justifyContent: 'flex-start',
           textAlign: 'left',
-          color: 'green',
+          color: theam.palette.primary.main,
           marginTop: '0px',
           marginBottom: '0px',
         }}

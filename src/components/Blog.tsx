@@ -1,10 +1,8 @@
-function Blog() {
+import { Box } from '@mui/material';
+
+export default function Blog() {
   return (
-    <div>
-      <h2 style={{ color: 'black' }}>Blog</h2>
-      <p style={{ color: 'black' }}>Welcome to the blog!</p>
-    </div>
+    <Box sx={{width: '100vw'}}>
+    </Box>
   );
 }
-
-export default Blog;
