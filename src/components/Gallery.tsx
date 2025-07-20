@@ -1,4 +1,4 @@
-function Gallery() {
+export default function Gallery() {
   return (
     <div>
       <h2 style={{ color: 'black' }}>Gallery</h2>
@@ -11,5 +11,3 @@ function Gallery() {
     </div>
   );
 }
-
-export default Gallery;

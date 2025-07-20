@@ -14,7 +14,7 @@ import Button from './Button';
 export default function ColorTabs() {
   const [value, setValue] = React.useState('one');
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+  const handleChange = (_event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
 
@@ -24,8 +24,8 @@ export default function ColorTabs() {
         <Tabs
           value={value}
           onChange={handleChange}
-          textColor="secondary"
-          indicatorColor="secondary"
+          textColor="primary"
+          indicatorColor="primary"
           aria-label="secondary tabs example"
         >
           <Tab value="one" label="Home" component={NavLink} to="/" />
