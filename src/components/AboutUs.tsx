@@ -1,127 +1,26 @@
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import Bread from './BreadIcon';
-import { Typography } from '@mui/material';
-import Box from '@mui/material/Box';
-import { useTheme } from '@mui/material/styles';
-import Achieve from './Achievement';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 function AboutUs() {
-  const theam = useTheme();
   return (
-    <>
-      <Box>
-        <Box>
-          <Bread />
-        </Box>
-        <Box sx={{ display: 'flex', width: '100vw' }}>
-          <Box sx={{ width: '50%', marginTop: '50px' }}>
-            <Box
-              style={{
-                color: theam.palette.primary.light,
-                // display: 'flex',
-                marginLeft: '130px',
-                fontSize: '1.5rem',
-                fontWeight: '700',
-                // width: '50vw',
-              }}
-            >
-              BHAVNAGAR DENTAL AND IMPLANT HOSPITAL
-            </Box>
-            <p
-              style={{
-                fontFamily: 'poppins, sans-serif',
-                color: '#6a6c72',
-                marginLeft: '130px',
-                fontSize: '1rem',
-              }}
-            >
-              The morning sun filtered through the tall pine trees, casting golden patterns on the
-              forest floor. Birds chirped overhead as a soft breeze rustled the leaves, creating a
-              gentle, rhythmic sound. A narrow path wound its way through the woods, inviting anyone
-              passing by to explore its quiet mysteries. The scent of damp earth and wildflowers
-              filled the air, grounding every step in natures calm. It was one of those rare moments
-              where time seemed to pause, allowing the world to simply breathe.
-            </p>
-            <Box sx={{ display: 'flex', marginLeft: '130px' }}>
-              <Box>
-                <Box sx={{ display: 'flex', marginBottom: '18px' }}>
-                  <CheckCircleIcon sx={{ color: theam.palette.primary.light }}></CheckCircleIcon>
-                  <Typography sx={{ marginLeft: '10px' }}>Dental Implant</Typography>
-                </Box>
-                <Box sx={{ display: 'flex', marginBottom: '18px' }}>
-                  <CheckCircleIcon sx={{ color: theam.palette.primary.light }}></CheckCircleIcon>
-                  <Typography sx={{ marginLeft: '10px' }}>Dental Bridge Treatment</Typography>
-                </Box>
-                <Box sx={{ display: 'flex', marginBottom: '18px' }}>
-                  <CheckCircleIcon sx={{ color: theam.palette.primary.light }}></CheckCircleIcon>
-                  <Typography sx={{ marginLeft: '10px' }}>Root Canal Treatment</Typography>
-                </Box>
-                <Box sx={{ display: 'flex' }}>
-                  <Box
-                    sx={{
-                      height: '70px',
-                      width: '70px',
-                      borderRadius: '50%',
-                      // backgroundColor: 'white',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2);',
-                    }}
-                  >
-                    <img src="medical-symbol.png" />
-                  </Box>
-                  <Box sx={{ marginLeft: '15px' }}>
-                    <Typography sx={{ fontSize: '2rem', fontWeight: '500' }}>5 years</Typography>
-                    <Typography>Dental Exprienced</Typography>
-                  </Box>
-                </Box>
-              </Box>
-              <Box sx={{ marginLeft: '100px' }}>
-                <Box sx={{ display: 'flex', marginBottom: '18px' }}>
-                  <CheckCircleIcon sx={{ color: theam.palette.primary.light }}></CheckCircleIcon>
-                  <Typography sx={{ marginLeft: '10px' }}>Teeth Whitining</Typography>
-                </Box>
-                <Box sx={{ display: 'flex', marginBottom: '18px' }}>
-                  <CheckCircleIcon sx={{ color: theam.palette.primary.light }}></CheckCircleIcon>
-                  <Typography sx={{ marginLeft: '10px' }}>Smile desining</Typography>
-                </Box>
-                <Box sx={{ display: 'flex', marginBottom: '18px' }}>
-                  <CheckCircleIcon sx={{ color: theam.palette.primary.light }}></CheckCircleIcon>
-                  <Typography sx={{ marginLeft: '10px' }}>Routine Checkup </Typography>
-                </Box>
-                <Box sx={{ display: 'flex' }}>
-                  <Box
-                    sx={{
-                      height: '70px',
-                      width: '70px',
-                      borderRadius: '50%',
-                      // backgroundColor: 'white',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2);',
-                    }}
-                  >
-                    <img src="dentist-chair.png" />
-                  </Box>
-                  <Box sx={{ marginLeft: '15px' }}>
-                    <Typography sx={{ fontSize: '2rem', fontWeight: '500' }}>1800+</Typography>
-                    <Typography>Dental services</Typography>
-                  </Box>
-                </Box>
-              </Box>
-            </Box>
-          </Box>
-          <Box sx={{ width: '50%', overflow: 'hidden' }}>
-            <img src="Bhavnagar1.jpg" style={{ height: '600px', padding: '30px' }} />
-          </Box>
-        </Box>
-        <Typography fontWeight={700} fontSize={'2rem'} marginLeft={'130px'} marginBottom={'20px'}>Our Achievements</Typography>
-        <Box>
-          <Achieve />
-        </Box>
-      </Box>
-    </>
+    <div>
+      <h2 style={{ color: 'blue', display: 'flex' }}>
+        About BHAVNAGAR DENTAL AND IMPLANT HOSPITAL
+      </h2>
+      <div className="about-container">
+        <p className="intro">
+          The morning sun filtered through the tall pine trees, casting golden patterns on the
+          forest floor. Birds chirped overhead as a soft breeze rustled the leaves, creating a
+          gentle, rhythmic sound. A narrow path wound its way through the woods, inviting anyone
+          passing by to explore its quiet mysteries. The scent of damp earth and wildflowers filled
+          the air, grounding every step in nature’s calm. It was one of those rare moments where
+          time seemed to pause, allowing the world to simply breathe.
+        </p>
+        <div className="image-profile"></div>
+      </div>
+      <Button variant="contained" color="error" startIcon={<DeleteIcon />}>
+        Delete
+      </Button>
+    </div>
   );
 }
 
