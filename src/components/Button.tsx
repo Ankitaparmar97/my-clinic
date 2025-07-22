@@ -2,15 +2,18 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 
-// export default function BasicButtons() {
-
 const PhoneCall = () => {
   const theam = useTheme();
   const phoneNumber = '+919998086406';
   return (
     <Stack spacing={2} direction="row" sx={{ padding: '10px' }}>
       <a href={`tel:${phoneNumber}`}>
-        <Button sx={{ backgroundColor: theam.palette.primary.light, color: 'black' }}>
+        <Button
+          sx={{
+            backgroundColor: theam.palette.primary.light,
+            color: theam.palette.primary.contrastText,
+          }}
+        >
           Book Appointment
         </Button>
       </a>

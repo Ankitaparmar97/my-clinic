@@ -1,12 +1,6 @@
 #root {
   width: 100vw;
   height: 100%;
-  /* margin: 0 auto; */
-  /* padding: 0.5rem; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: stretch; */
-  /* text-align: center; */
 }
 
 @keyframes logo-spin {
@@ -44,8 +38,6 @@
   color: black;
 }
 
-/* .about-container {
-  display: flex; */
 
 .image-profile {
   width: 50%;
@@ -54,8 +46,4 @@
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
-}
-.intro {
-  color: black;
-  width: 50%;
 }

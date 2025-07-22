@@ -2,10 +2,12 @@ import { Button, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useTheme } from '@mui/material/styles';
+
 export default function BasicTextFields() {
   const theam = useTheme();
   const phoneNumber = '+919998086406';
   const email = 'ankitaparmar@gmail.com';
+
   return (
     <>
       <h2 style={{ display: 'flex', justifyContent: 'center', fontWeight: '700' }}>Contact Us</h2>
@@ -55,17 +57,33 @@ export default function BasicTextFields() {
             Contact Us by Phone Number or Email Address
           </Typography>
           {/* <Typography>Phone Number</Typography> */}
-          <p style={{ color: 'black', display: 'flex', justifyContent: 'center' }}>
+          <p
+            style={{ color: theam.palette.text.primary, display: 'flex', justifyContent: 'center' }}
+          >
             <strong>Phone Number:</strong>
-            <a href={`tel:${phoneNumber}`} style={{ textDecoration: 'none', color: 'blue' }}>
+            <a
+              href={`tel:${phoneNumber}`}
+              style={{ textDecoration: 'none', color: theam.palette.primary.light }}
+            >
               9998086406
             </a>
           </p>
-          <p style={{ color: 'black', display: 'flex', justifyContent: 'center' }}>
+          <p
+            style={{ color: theam.palette.text.primary, display: 'flex', justifyContent: 'center' }}
+          >
             <strong>Email:</strong>
-            <a href={`mailto:${email}`} style={{ textDecoration: 'none', color: 'blue' }}>
+            <a
+              href={`mailto:${email}`}
+              style={{ textDecoration: 'none', color: theam.palette.primary.light }}
+            >
               ankitaparmar@gmail.com
             </a>
+          </p>
+          <p
+            style={{ color: theam.palette.text.primary, display: 'flex', justifyContent: 'center' }}
+          >
+            <strong>Address:</strong>
+            <Typography>C20,Bhavnagar dental clinic, Kaliyabid, Bhavnagar-364001</Typography>
           </p>
         </Box>
       </Box>

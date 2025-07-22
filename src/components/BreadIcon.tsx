@@ -2,7 +2,6 @@ import * as React from 'react';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
-// import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { NavLink, Route, Routes } from 'react-router-dom';
 import Box from '@mui/material/Box';
 // import Home from './HomePage';
@@ -26,7 +25,6 @@ export default function CustomSeparator(props) {
         alignItems: 'center',
         width: '100vw',
         height: '300px',
-        // backgroundColor: theam.palette.primary.light,
         backgroundImage: 'url(l_denture.jpg)',
       }}
     >
