@@ -9,7 +9,7 @@ import { Tab, Tabs } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Blog from './Blog';
 
-export default function CustomSeparator(props) {
+export default function CustomSeparator() {
   const theam = useTheme();
   const [value, setValue] = React.useState('one');
 
@@ -31,7 +31,7 @@ export default function CustomSeparator(props) {
       <Tabs value={value} onChange={handleChange} textColor="primary">
         <Tab value="one" label="Blog" component={NavLink} to="/Blog" />
       </Tabs>
-      <Typography sx={{ color: 'text.primary' }}>Breadcrumb</Typography>
+      <Typography sx={{ color: theam.palette.text.primary }}>Breadcrumb</Typography>
     </Box>,
   ];
   <Routes>
