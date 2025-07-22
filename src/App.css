@@ -1,6 +1,25 @@
 #root {
-  width: 100vw;
+  width: 100%;
   height: 100%;
+  /* margin: 0 auto; */
+  /* padding: 0.5rem; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: stretch; */
+  /* text-align: center; */
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
 @keyframes logo-spin {
@@ -38,7 +57,9 @@
   color: black;
 }
 
-
+.about-container {
+  display: flex;
+}
 .image-profile {
   width: 50%;
   height: 400px;
@@ -46,4 +67,8 @@
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
+}
+.intro {
+  color: black;
+  width: 50%;
 }
