@@ -10,13 +10,13 @@ function Example() {
       name: 'Bhavnagar Dental Hospital',
       description:
         'A dental implant is a surgical component that interfaces with the bone of the jaw or skull to support a dental prosthesis such as a crown.',
-      image: 'l_denture.jpg',
+      image: 'l-denture.jpg',
     },
     {
       name: 'Implant Center',
       description:
         'A dental implant is a surgical component that interfaces with the bone of the jaw or skull to support a dental prosthesis such as a crown.',
-      image: 'l_homeimage.jpg',
+      image: 'l-homeimage.jpg',
     },
     {
       name: 'Root Canal',
@@ -28,7 +28,7 @@ function Example() {
       name: 'Teeth whitining',
       description:
         'A dental implant is a surgical component that interfaces with the bone of the jaw or skull to support a dental prosthesis such as a crown.',
-      image: 'l_teeth2.jpg',
+      image: 'l-teeth.jpg',
     },
   ];
 

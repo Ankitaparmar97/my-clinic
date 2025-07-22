@@ -25,7 +25,7 @@ export default function CustomSeparator(props) {
         alignItems: 'center',
         width: '100vw',
         height: '300px',
-        backgroundImage: 'url(l_denture.jpg)',
+        backgroundImage: 'url(l-denture.jpg)',
       }}
     >
       <Tabs value={value} onChange={handleChange} textColor="primary">

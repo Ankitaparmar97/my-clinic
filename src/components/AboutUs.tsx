@@ -113,10 +113,12 @@ function AboutUs() {
             </Box>
           </Box>
           <Box sx={{ width: '50%', overflow: 'hidden' }}>
-            <img src="Bhavnagar1.jpg" style={{ height: '600px', padding: '30px' }} />
+            <img src="Bhavnagar.jpg" style={{ height: '600px', padding: '30px' }} />
           </Box>
         </Box>
-        <Typography fontWeight={700} fontSize={'2rem'} marginLeft={'130px'} marginBottom={'20px'}>Our Achievements</Typography>
+        <Typography fontWeight={700} fontSize={'2rem'} marginLeft={'130px'} marginBottom={'20px'}>
+          Our Achievements
+        </Typography>
         <Box>
           <Achieve />
         </Box>

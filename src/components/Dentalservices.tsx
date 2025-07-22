@@ -30,7 +30,7 @@ export default function ActionAreaCard() {
           <CardMedia
             component="img"
             // height="140"
-            image="teeth2.jpg"
+            image="l-teeth.jpg"
             alt="green iguana"
           />
           <CardContent>
@@ -48,7 +48,7 @@ export default function ActionAreaCard() {
           <CardMedia
             component="img"
             // height="140"
-            image="rootCanal.jpg"
+            image="root-canal.jpg"
             alt="green iguana"
           />
           <CardContent>
@@ -66,7 +66,7 @@ export default function ActionAreaCard() {
           <CardMedia
             component="img"
             // height="140"
-            image="childDental.jpg"
+            image="child-dental.jpg"
             alt="green iguana"
           />
           <CardContent>
