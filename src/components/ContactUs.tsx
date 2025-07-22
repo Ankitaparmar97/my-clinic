@@ -46,7 +46,7 @@ export default function BasicTextFields() {
             <Button
               sx={{
                 border: '.5px solid',
-                borderColor: 'black',
+                borderColor: theam.palette.text.primary,
                 backgroundColor: theam.palette.primary.light,
               }}
             >
@@ -56,7 +56,6 @@ export default function BasicTextFields() {
           <Typography sx={{ display: 'flex', justifyContent: 'center' }}>
             Contact Us by Phone Number or Email Address
           </Typography>
-          {/* <Typography>Phone Number</Typography> */}
           <p
             style={{ color: theam.palette.text.primary, display: 'flex', justifyContent: 'center' }}
           >

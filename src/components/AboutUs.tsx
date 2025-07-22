@@ -1,5 +1,5 @@
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import Bread from './BreadIcon';
+import Bread from './Breadcrumb';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
@@ -29,7 +29,7 @@ function AboutUs() {
             <p
               style={{
                 fontFamily: 'poppins, sans-serif',
-                color: '#6a6c72',
+                color: theam.palette.text.primary,
                 marginLeft: '130px',
                 fontSize: '1rem',
               }}
@@ -61,7 +61,6 @@ function AboutUs() {
                       height: '70px',
                       width: '70px',
                       borderRadius: '50%',
-                      // backgroundColor: 'white',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -95,7 +94,6 @@ function AboutUs() {
                       height: '70px',
                       width: '70px',
                       borderRadius: '50%',
-                      // backgroundColor: 'white',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',

@@ -6,13 +6,15 @@ import Gallery from './Gallery';
 import ContactUs from './ContactUs';
 import Blog from './Blog';
 import Carouselicon from './CarouselIcon';
+import { useTheme } from '@mui/material/styles';
 
 function HomePage() {
+  const theam = useTheme();
   return (
     <div>
       <Carouselicon />
       <div>
-        <h1 style={{ color: 'black' }}>Dental Clinic</h1>
+        <h1 style={{ color: theam.palette.text.primary }}>Dental Clinic</h1>
       </div>
       <div>
         <AboutUs />
@@ -26,11 +28,13 @@ function HomePage() {
       <div>
         <Blog />
       </div>
-      <p style={{ color: 'black' }}>Contact Us by Phone Number or Email Address</p>
-      <p style={{ color: 'black' }}>
+      <p style={{ color: theam.palette.text.primary }}>
+        Contact Us by Phone Number or Email Address
+      </p>
+      <p style={{ color: theam.palette.text.primary }}>
         <strong>Phone:</strong> (999) 818-1111
       </p>
-      <p style={{ color: 'black' }}>
+      <p style={{ color: theam.palette.text.primary }}>
         <strong>Email:</strong> contact@myclinic.com
       </p>
     </div>

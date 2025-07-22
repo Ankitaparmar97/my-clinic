@@ -4,7 +4,6 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import { NavLink, Route, Routes } from 'react-router-dom';
 import Box from '@mui/material/Box';
-// import Home from './HomePage';
 import { Tab, Tabs } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Blog from './Blog';
@@ -13,12 +12,12 @@ export default function CustomSeparator() {
   const theam = useTheme();
   const [value, setValue] = React.useState('one');
 
-  const handleChange = (_event: React.SyntheticEvent, newValue: string) => {
+  const handleChange = (_: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
   const breadcrumbs = [
-    //  eslint-disable-next-line react-x/no-missing-key
     <Box
+      key={'breadcrumb-box'}
       sx={{
         display: 'flex',
         justifyContent: 'center',
@@ -39,10 +38,12 @@ export default function CustomSeparator() {
   </Routes>;
 
   return (
-    <Stack spacing={2}>
-      <Breadcrumbs separator=">" aria-label="breadcrumb">
-        {breadcrumbs}
-      </Breadcrumbs>
-    </Stack>
+    <>
+      <Stack spacing={2}>
+        <Breadcrumbs separator=">" aria-label="breadcrumb">
+          {breadcrumbs}
+        </Breadcrumbs>
+      </Stack>
+    </>
   );
 }

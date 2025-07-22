@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useTheme } from '@mui/material/styles';
 
 function Example() {
+   const theam = useTheme();
   const items: CarouselItem[] = [
     {
       name: 'Bhavnagar Dental Hospital',
@@ -39,8 +40,8 @@ function Example() {
       navButtonsAlwaysVisible={true}
       navButtonsProps={{
         style: {
-          backgroundColor: 'white',
-          color: 'black',
+          backgroundColor: theam.palette.background.paper,
+          color: theam.palette.text.primary,
         },
       }}
       swipe={false}
@@ -74,7 +75,6 @@ function Item({ item }: { item: CarouselItem }) {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        color: 'white',
         position: 'relative',
         borderRadius: 8,
       }}
@@ -107,7 +107,7 @@ function Item({ item }: { item: CarouselItem }) {
           justifyContent: 'flex-start',
           textAlign: 'left',
           width: '40%',
-          color: 'black',
+          color: theam.palette.text.primary,
         }}
       >
         {item.description}

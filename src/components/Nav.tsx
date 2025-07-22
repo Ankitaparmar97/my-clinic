@@ -11,10 +11,11 @@ import ContactUs from './ContactUs';
 import DentalServices from './Dentalservices';
 import Button from './Button';
 
+
 export default function ColorTabs() {
   const [value, setValue] = React.useState('one');
 
-  const handleChange = (_event: React.SyntheticEvent, newValue: string) => {
+  const handleChange = (_: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
 

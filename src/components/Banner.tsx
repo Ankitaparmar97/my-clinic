@@ -18,7 +18,6 @@ export default function ButtonAppBar() {
           alignItems: 'center',
           width: '100%',
           height: '40px',
-          // padding: '10px',
         }}
       >
         <Box sx={{ display: 'flex', marginLeft: '50px' }}>
