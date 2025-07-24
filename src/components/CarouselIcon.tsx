@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useTheme } from '@mui/material/styles';
 
 function Example() {
-   const theam = useTheme();
+  const theam = useTheme();
   const items: CarouselItem[] = [
     {
       name: 'Bhavnagar Dental Hospital',

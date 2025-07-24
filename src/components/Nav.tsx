@@ -11,7 +11,6 @@ import ContactUs from './ContactUs';
 import DentalServices from './Dentalservices';
 import Button from './Button';
 
-
 export default function ColorTabs() {
   const [value, setValue] = React.useState('one');
 
@@ -22,13 +21,7 @@ export default function ColorTabs() {
   return (
     <Box sx={{ width: '100%' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          textColor="primary"
-          indicatorColor="primary"
-          aria-label="secondary tabs example"
-        >
+        <Tabs value={value} onChange={handleChange} aria-label="secondary tabs example">
           <Tab value="one" label="Home" component={NavLink} to="/" />
           <Tab value="two" label="About Us" component={NavLink} to="/AboutUs" />
           <Tab value="three" label="Dental services" component={NavLink} to="/Dentalservices" />
