@@ -2,20 +2,22 @@ import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
 import Button from './Button';
 import { motion } from 'framer-motion';
+import { useTheme } from '@mui/material/styles';
 
 function Example() {
+  const theam = useTheme();
   const items: CarouselItem[] = [
     {
       name: 'Bhavnagar Dental Hospital',
       description:
         'A dental implant is a surgical component that interfaces with the bone of the jaw or skull to support a dental prosthesis such as a crown.',
-      image: 'l_denture.jpg',
+      image: 'l-denture.jpg',
     },
     {
       name: 'Implant Center',
       description:
         'A dental implant is a surgical component that interfaces with the bone of the jaw or skull to support a dental prosthesis such as a crown.',
-      image: 'l_homeimage.jpg',
+      image: 'l-homeimage.jpg',
     },
     {
       name: 'Root Canal',
@@ -27,7 +29,7 @@ function Example() {
       name: 'Teeth whitining',
       description:
         'A dental implant is a surgical component that interfaces with the bone of the jaw or skull to support a dental prosthesis such as a crown.',
-      image: 'l_teeth2.jpg',
+      image: 'l-teeth.jpg',
     },
   ];
 
@@ -38,8 +40,8 @@ function Example() {
       navButtonsAlwaysVisible={true}
       navButtonsProps={{
         style: {
-          backgroundColor: 'white',
-          color: 'black',
+          backgroundColor: theam.palette.background.paper,
+          color: theam.palette.text.primary,
         },
       }}
       swipe={false}
@@ -60,6 +62,7 @@ type CarouselItem = {
 };
 
 function Item({ item }: { item: CarouselItem }) {
+  const theam = useTheme();
   return (
     <Paper
       style={{
@@ -72,7 +75,6 @@ function Item({ item }: { item: CarouselItem }) {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        color: 'white',
         position: 'relative',
         borderRadius: 8,
       }}
@@ -87,7 +89,7 @@ function Item({ item }: { item: CarouselItem }) {
           flexDirection: 'row',
           justifyContent: 'flex-start',
           textAlign: 'left',
-          color: 'green',
+          color: theam.palette.primary.main,
           marginTop: '0px',
           marginBottom: '0px',
         }}
@@ -105,7 +107,7 @@ function Item({ item }: { item: CarouselItem }) {
           justifyContent: 'flex-start',
           textAlign: 'left',
           width: '40%',
-          color: 'black',
+          color: theam.palette.text.primary,
         }}
       >
         {item.description}

@@ -14,20 +14,14 @@ import Button from './Button';
 export default function ColorTabs() {
   const [value, setValue] = React.useState('one');
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+  const handleChange = (_: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
 
   return (
     <Box sx={{ width: '100%' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          textColor="secondary"
-          indicatorColor="secondary"
-          aria-label="secondary tabs example"
-        >
+        <Tabs value={value} onChange={handleChange} aria-label="secondary tabs example">
           <Tab value="one" label="Home" component={NavLink} to="/" />
           <Tab value="two" label="About Us" component={NavLink} to="/AboutUs" />
           <Tab value="three" label="Dental services" component={NavLink} to="/Dentalservices" />
