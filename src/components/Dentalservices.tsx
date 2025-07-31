@@ -7,7 +7,6 @@ import { useTheme } from '@mui/material/styles';
 import { Box, Button } from '@mui/material';
 import Bread from './Breadcrumb';
 import { Link } from 'react-router-dom';
-import { color } from 'framer-motion';
 
 export default function ActionAreaCard() {
   return (
@@ -38,38 +37,38 @@ export default function ActionAreaCard() {
           />
           <CardItem
             image="child-dental.jpg"
-            title="Dental Bridge Treatment"
-            description="A dental bridge permanently replaces missing teeth with false teeth. The bridge is attached to the teeth on either side of the gap. Bridges are usually made of porcelain or metal, a mixture of the 2, or zirconia."
+            title="Dental Implant"
+            description="A dental embed is a screw produced using titanium which is set in the jaw at the site of the missing teeth. The material utilized for a dental embed is titanium since it is a bio-viable material. A biocompatible material doesn't make any bothering the gingiva. This screw goes about as the root part of the teeth. The screw is connected to the alveolar bone by methods for osseointegration"
           />
           <CardItem
             image="child-dental.jpg"
-            title="Dental Bridge Treatment"
-            description="A dental bridge permanently replaces missing teeth with false teeth. The bridge is attached to the teeth on either side of the gap. Bridges are usually made of porcelain or metal, a mixture of the 2, or zirconia."
+            title="Child teeth treatment"
+            description="We treat babies, little children, youths, and youngsters to guarantee that your kids can appreciate great dental wellbeing all through the entirety of their early stages. This guarantees that as your kids' dental necessities start to change with age, our dental arrangements can be modified to meet them"
           />
           <CardItem
             image="child-dental.jpg"
-            title="Dental Bridge Treatment"
-            description="A dental bridge permanently replaces missing teeth with false teeth. The bridge is attached to the teeth on either side of the gap. Bridges are usually made of porcelain or metal, a mixture of the 2, or zirconia."
+            title="Root canal treatment"
+            description="A root canal is the normal pit inside the foundations of the tooth. It comprises of pulp(nerves of the tooth). A root canal treatment is the treatment of the tooth root."
           />
           <CardItem
             image="child-dental.jpg"
-            title="Dental Bridge Treatment"
-            description="A dental bridge permanently replaces missing teeth with false teeth. The bridge is attached to the teeth on either side of the gap. Bridges are usually made of porcelain or metal, a mixture of the 2, or zirconia."
+            title="Smile designing"
+            description="Woman with very low certainty while chatting with companions and family members in view of appalling teeth. Sure grin was planned with blend of Teeth cleaning, Dental Implants and Crowns, at Laxmi Dental Clinic"
           />
           <CardItem
             image="child-dental.jpg"
-            title="Dental Bridge Treatment"
-            description="A dental bridge permanently replaces missing teeth with false teeth. The bridge is attached to the teeth on either side of the gap. Bridges are usually made of porcelain or metal, a mixture of the 2, or zirconia."
+            title="Teeth cleaning"
+            description="Teeth cleaning is a standard dental methodology. We prompt our patients for a customary teeth cleaning like clockwork to 1 year. Other than that, anybody with a stained teeth, awful breath or draining gums ought to quickly complete a teeth cleaning. On the off chance that you are confronting any of these conditions, it demonstrates that you need a teeth cleaning as ahead of schedule as could reasonably be expected."
           />
           <CardItem
             image="child-dental.jpg"
-            title="Dental Bridge Treatment"
-            description="A dental bridge permanently replaces missing teeth with false teeth. The bridge is attached to the teeth on either side of the gap. Bridges are usually made of porcelain or metal, a mixture of the 2, or zirconia."
+            title="Denture"
+            description="A dental replacement is the most crude technique for trade for missing teeth. It is made of an acrylic plate on which counterfeit teeth is installed.There are essentially 2 sorts of false teeth: complete and fractional. A total dental replacement is for patients who don't have any teeth in his mouth, we call them edentulous."
           />
           <CardItem
             image="child-dental.jpg"
-            title="Dental Bridge Treatment"
-            description="A dental bridge permanently replaces missing teeth with false teeth. The bridge is attached to the teeth on either side of the gap. Bridges are usually made of porcelain or metal, a mixture of the 2, or zirconia."
+            title="Wisdom tooth removal"
+            description="Insight tooth emission is now and again an excruciating occasion. Being the last tooth of the curve, now and then it needs more space for its emission. In those cases, the emission push will in general reason torment in that locale. We consider it an affected tooth. Here and there it additionally influences the neighboring tooth by pushing them and making pockets in the middle of which thusly causes contamination and rot of the tooth. In those cases."
           />
         </Box>
       </Box>

@@ -1,5 +1,5 @@
-// theme/lightTheme.ts
 import { createTheme } from '@mui/material/styles';
+// #TODO: change the color into hex
 
 const lightTheme = createTheme({
   palette: {
@@ -8,13 +8,13 @@ const lightTheme = createTheme({
       main: '#0d487c',
       light: '#06a3da',
       dark: '#207d26',
-      contrastText: '#fff',
+      contrastText: '#ffffff',
     },
     secondary: {
       main: '#FDFBFF',
       light: '#ffa15b',
       dark: '#b26023',
-      contrastText: '#fff',
+      contrastText: '#ffffff',
     },
     error: {
       main: '#d32f2f',
@@ -30,11 +30,11 @@ const lightTheme = createTheme({
     },
     background: {
       default: '#f5f5f5',
-      paper: '#fff',
+      paper: '#ffffff',
     },
     text: {
-      primary: '#1a1a1a',
-      secondary: '#4d4d4d',
+      primary: '#222222',
+      secondary: '#6a6c72',
     },
     divider: '#e0e0e0',
   },

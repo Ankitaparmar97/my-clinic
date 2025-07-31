@@ -13,7 +13,7 @@ function AboutUs() {
           <Bread />
         </Box>
         <Box sx={{ display: 'flex', width: '100vw' }}>
-          <Box sx={{ width: '50%', marginTop: '50px' }}>
+          <Box sx={{ width: '50%', marginTop: '3rem' }}>
             <Box
               style={{
                 color: theam.palette.primary.light,
