@@ -23,7 +23,7 @@ export default function PrimarySearchAppBar() {
         >
           <Box sx={{ display: 'flex' }}>
             <Box>
-              <img src="header-teeth.png" />
+              <img src="/header-teeth.png" />
             </Box>
             <Typography
               variant="h6"

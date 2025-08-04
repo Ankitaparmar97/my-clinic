@@ -2,6 +2,7 @@ import { Button, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useTheme } from '@mui/material/styles';
+// import MyGoogleMap from './GooglaMap';
 
 export default function BasicTextFields() {
   const theam = useTheme();
@@ -10,6 +11,33 @@ export default function BasicTextFields() {
 
   return (
     <>
+      <div
+        style={{
+          position: 'relative',
+          paddingBottom: '30%',
+          height: 0,
+          overflow: 'hidden',
+          marginLeft: '10%',
+          marginRight: '10%',
+        }}
+      >
+        <iframe
+          title="Bhavnagar Dental and Implant Hospital"
+          src="https://maps.google.com/maps?q=Bhavnagar%20dental%20and%20implant%20hospital%20Lakhubha%20Hall%20Road%2C%20opposite%20Om%20Plaza%2C%20near%20Ram%20Mantra%20Mandir%2C%20Ramnagar%2C%20Kaliyabid%2C%20Bhavnagar%2C%20Gujarat%20364002&z=14&output=embed"
+          frameBorder="0"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+          }}
+          allowFullScreen
+          aria-hidden="false"
+          tabIndex={0}
+        ></iframe>
+      </div>
+      {/* </div> */}
       <h2 style={{ display: 'flex', justifyContent: 'center', fontWeight: '700' }}>Contact Us</h2>
       <Box
         component="form"
