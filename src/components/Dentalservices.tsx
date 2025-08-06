@@ -7,6 +7,8 @@ import { useTheme } from '@mui/material/styles';
 import { Box, Button } from '@mui/material';
 import Bread from './Breadcrumb';
 import { Link } from 'react-router-dom';
+//#TODO: maintain consistency across cards  badha card sarkha dekhava joiye, 
+//#TODO: proof read content and fix .... sarkhi rite vacho tamro content and copy bhi dhang thi karo
 
 export default function ActionAreaCard() {
   return (

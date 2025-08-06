@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Bread from './Breadcrumb';
+//#TODO:  zoom image on hover
 
 function CardWithImage({ src }: { src: string }) {
   return (
@@ -67,8 +68,8 @@ export default function Gallery() {
           <CardWithImage src="smile.jpg" />
           <CardWithImage src="smile.jpg" />
           <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
+          {/* <CardWithImage src="smile.jpg" />
+          <CardWithImage src="smile.jpg" /> */}
         </Box>
       </Box>
     </>

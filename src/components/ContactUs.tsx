@@ -2,7 +2,10 @@ import { Button, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useTheme } from '@mui/material/styles';
-// import MyGoogleMap from './GooglaMap';
+//#TODO: send mail / message on submit, 
+//#TODO: add icon for mail, phone and location
+//#TODO: remove border and add shadow of form
+
 
 export default function BasicTextFields() {
   const theam = useTheme();
