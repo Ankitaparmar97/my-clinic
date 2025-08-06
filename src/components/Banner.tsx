@@ -4,8 +4,9 @@ import AddLocationIcon from '@mui/icons-material/AddLocation';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import AddCallIcon from '@mui/icons-material/AddCall';
 import { useTheme } from '@mui/material/styles';
-import { PhoneCall } from 'react-flaticons';
+// import { PhoneCall } from 'react-flaticons';
 // import FaWhatsapp from 'react-flaticons';
 // import '@flaticon/flaticon-uicons/css/all/all.css'; // All icons (larger bundle)
 
@@ -51,10 +52,11 @@ export default function ButtonAppBar() {
               sx={{ color: theam.palette.primary.light, marginLeft: '5px' }}
             ></WhatsAppIcon>
           </a>
-          <PhoneCall color="theam.palette.primary.light"></PhoneCall>
-          {/* <FaWhatsapp color="theam.palette.primary.light"></FaWhatsapp> */}
-          {/* <Whatsapp color="#25D366" size="32px" />; */}
-          {/* <AddCallIcon sx={{ color: theam.palette.primary.light, marginLeft: '5px' }}></AddCallIcon> */}
+          <a href={`tel:${phoneNumber}`}>
+            <AddCallIcon
+              sx={{ color: theam.palette.primary.light, marginLeft: '5px' }}
+            ></AddCallIcon>
+          </a>
         </Box>
       </Box>
     </>
