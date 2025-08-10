@@ -7,7 +7,7 @@ import { useTheme } from '@mui/material/styles';
 import { Box, Button } from '@mui/material';
 import Bread from './Breadcrumb';
 import { Link } from 'react-router-dom';
-//#TODO: maintain consistency across cards  badha card sarkha dekhava joiye, 
+//#TODO: maintain consistency across cards  badha card sarkha dekhava joiye,
 //#TODO: proof read content and fix .... sarkhi rite vacho tamro content and copy bhi dhang thi karo
 
 export default function ActionAreaCard() {
@@ -57,23 +57,23 @@ export default function ActionAreaCard() {
           <CardItem
             image="/services-childdental.jpg"
             title="Child teeth treatment"
-            description="We treat babies, little children, and youngsters to guarantee that your kids can appreciate great dental wellbeing all through the entirety of their early stages.Early intervention is crucial to prevent more serious problems as children's teeth develop."
+            description="We treat babies, little children to guarantee that your kids can appreciate great dental wellbeing all through the entirety of their early stages.Early intervention is crucial to prevent more serious problems as children's teeth develop.Uses small instruments to remove the tooth"
           />
           <CardItem
             image="/services-smiledesining.jpeg"
             title="Smile designing"
-            description="Woman with very low certainty while chatting with companions and family members in view of appalling teeth. Sure grin was planned with blend of Teeth cleaning, Dental Implants and Crowns, at Laxmi Dental Clinic"
+            description="Smile designing in dentistry, also known as smile makeover, is a comprehensive approach to enhancing the appearance of a person's smile through a combination of cosmetic and restorative dental procedures.The duration of a smile design can be between 5 and 20 years"
           />
 
           <CardItem
             image="/services-denture.jpg"
             title="Denture"
-            description="A dental replacement is the most crude technique for trade for missing teeth. It is made of an acrylic plate on which counterfeit teeth is installed.There are essentially 2 sorts of false teeth: complete and fractional."
+            description="Dentures (also known as false teeth).In dentistry, a denture is a removable appliance that replaces missing teeth and surrounding tissues. It is designed to restore functionality and aesthetics, allowing patients to chew, speak, and smile with confidence."
           />
           <CardItem
             image="/services-wtr.jpg"
             title="Wisdom tooth removal"
-            description="Insight tooth emission is now and again an excruciating occasion. Being the last tooth of the curve, now and then it needs more space for its emission. In those cases, the emission push will in general reason torment in that locale."
+            description="Wisdom tooth removal is a common oral surgery procedure. Dentists may recommend this treatment to preserve your oral health and protect your other teeth from possible issues in the future.Your wisdom teeth are in the very back of your mouth.They erupt between ages of 17 and 25."
           />
         </Box>
       </Box>

@@ -13,7 +13,7 @@ function App() {
     <>
       <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
         <img
-          src="whatsapp.png"
+          src="/whatsapp.png"
           style={{
             position: 'fixed',
             bottom: '100px',
@@ -30,7 +30,7 @@ function App() {
       </a>
       <a href={`tel:${phoneNumber}`}>
         <img
-          src="telephone.png"
+          src="/telephone.png"
           style={{
             position: 'fixed',
             bottom: '40px',

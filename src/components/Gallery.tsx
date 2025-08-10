@@ -14,7 +14,20 @@ function CardWithImage({ src }: { src: string }) {
       }}
     >
       <CardContent>
-        <img src={src} alt="Card" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <Box
+          component="img"
+          src={src}
+          alt="Card"
+          sx={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            transition: 'transform 0.3s ease-in-out',
+            '&:hover': {
+              transform: 'scale(1.2)', // zoom effect
+            },
+          }}
+        />
       </CardContent>
     </Card>
   );
