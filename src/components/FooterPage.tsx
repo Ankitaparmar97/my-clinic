@@ -59,35 +59,35 @@ export default function FooterPage() {
           </Box>
           <Box sx={{ width: '25%' }}>
             <h3>Our services</h3>
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link to={'/Dentalservices'} style={{ color: theam.palette.primary.contrastText }}>
               Dental Implant
             </Link>
             <br />
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link to={'/Dentalservices'} style={{ color: theam.palette.primary.contrastText }}>
               Dental Bridge Treatment
             </Link>
             <br />
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link to={'/Dentalservices'} style={{ color: theam.palette.primary.contrastText }}>
               Smile Desining
             </Link>
             <br />
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link to={'/Dentalservices'} style={{ color: theam.palette.primary.contrastText }}>
               Teeth Cleaning
             </Link>
             <br />
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link to={'/Dentalservices'} style={{ color: theam.palette.primary.contrastText }}>
               Denture
             </Link>
             <br />
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link to={'/Dentalservices'} style={{ color: theam.palette.primary.contrastText }}>
               Child Dental Treatment
             </Link>
             <br />
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link to={'/Dentalservices'} style={{ color: theam.palette.primary.contrastText }}>
               Root canal Treatment
             </Link>
             <br />
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link to={'/Dentalservices'} style={{ color: theam.palette.primary.contrastText }}>
               Wisdom Tooth Removal
             </Link>
             <br />

@@ -33,7 +33,7 @@ export default function ButtonAppBar() {
         <Box sx={{ display: 'flex', marginLeft: '70px' }}>
           <AddLocationIcon sx={{ color: theam.palette.primary.light }}></AddLocationIcon>
           <Typography sx={{ fontSize: '12px' }}>
-            C20,Bhavnagar dental clinic, Kaliyabid, Bhavnagar-364001
+            C27,Bhavnagar dental clinic, Kaliyabid, Bhavnagar-364001
           </Typography>
         </Box>
         <Box sx={{ marginRight: '40px' }}>
