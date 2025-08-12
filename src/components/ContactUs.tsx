@@ -5,9 +5,6 @@ import { useTheme } from '@mui/material/styles';
 import AddCallIcon from '@mui/icons-material/AddCall';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import EmailIcon from '@mui/icons-material/Email';
-//#TODO: send mail / message on submit, !!!!!!!!!it's done
-//#TODO: add icon for mail, phone and location.   !!!!!!!!!it's done
-//#TODO: remove border and add shadow of form.     !!!!!!!!!it's done
 
 export default function BasicTextFields() {
   const theam = useTheme();
@@ -157,8 +154,6 @@ export default function BasicTextFields() {
                 <Button
                   type="submit"
                   style={{
-                    border: '.5px solid',
-                    borderColor: theam.palette.text.primary,
                     backgroundColor: theam.palette.primary.light,
                     color: theam.palette.primary.contrastText,
                   }}

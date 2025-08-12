@@ -3,12 +3,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import { useTheme } from '@mui/material/styles';
-// import Button from './Button';
 import { Box, Button } from '@mui/material';
 import Bread from './Breadcrumb';
 import { Link } from 'react-router-dom';
-//#TODO: maintain consistency across cards  badha card sarkha dekhava joiye,
-//#TODO: proof read content and fix .... sarkhi rite vacho tamro content and copy bhi dhang thi karo
 
 export default function ActionAreaCard() {
   return (
@@ -32,11 +29,13 @@ export default function ActionAreaCard() {
             gap: '20px',
           }}
         >
-          <CardItem
-            image="/service-bridgetreatment.jpg"
-            title="Dental Bridge Treatment"
-            description="A procedure involves preparing the adjacent teeth to support crowns.A dental bridge replaces missing teeth with false teeth. The bridge is attached to the teeth on either side of the gap. Bridges are usually made of metal,a mixture zirconia."
-          />
+          <div id="dental-bridge">
+            <CardItem
+              image="/service-bridgetreatment.jpg"
+              title="Dental Bridge Treatment"
+              description="A procedure involves preparing the adjacent teeth to support crowns.A dental bridge replaces missing teeth with false teeth. The bridge is attached to the teeth on either side of the gap. Bridges are usually made of metal,a mixture zirconia."
+            />
+          </div>
           <CardItem
             image="/services-implant.jpg"
             title="Dental Implant"
@@ -70,11 +69,13 @@ export default function ActionAreaCard() {
             title="Denture"
             description="Dentures (also known as false teeth).In dentistry, a denture is a removable appliance that replaces missing teeth and surrounding tissues. It is designed to restore functionality and aesthetics, allowing patients to chew, speak, and smile with confidence."
           />
-          <CardItem
-            image="/services-wtr.jpg"
-            title="Wisdom tooth removal"
-            description="Wisdom tooth removal is a common oral surgery procedure. Dentists may recommend this treatment to preserve your oral health and protect your other teeth from possible issues in the future.Your wisdom teeth are in the very back of your mouth.They erupt between ages of 17 and 25."
-          />
+          <div id="wth">
+            <CardItem
+              image="/services-wtr.jpg"
+              title="Wisdom tooth removal"
+              description="Wisdom tooth removal is a common oral surgery procedure. Dentists may recommend this treatment to preserve your oral health and protect your other teeth from possible issues in the future.Your wisdom teeth are in the very back of your mouth.They erupt between ages of 17 and 25."
+            />
+          </div>
         </Box>
       </Box>
     </Box>
@@ -128,10 +129,6 @@ function CardItem({
           >
             {description}
           </Typography>
-          {/* <Link to={''} style={{ textDecoration: 'underline' }}>
-            Read more
-          </Link>.   //#TODO: in future hare if we extend services in single page we can do that
-          <br /> */}
           <Button
             variant="contained"
             color="primary"

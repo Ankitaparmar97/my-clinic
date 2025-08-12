@@ -1,9 +1,7 @@
-// import './App.css';
 import Header from './components/Header';
 import Banner from './components/Banner';
 import Nav from './components/Nav';
 import { useTheme } from '@mui/material/styles';
-import FooterPage from './components/FooterPage';
 
 function App() {
   const theam = useTheme();
@@ -20,11 +18,7 @@ function App() {
             bottom: '100px',
             left: '40px',
             fontSize: '50px',
-            // padding: '10px 20px',
-            // backgroundColor: 'red',
             color: theam.palette.primary.light,
-            // border: 'none',
-            // borderRadius: '5px',
             zIndex: 1000,
           }}
         ></img>
@@ -37,11 +31,7 @@ function App() {
             bottom: '40px',
             left: '40px',
             fontSize: '50px',
-            // padding: '10px 20px',
-            // backgroundColor: 'red',
             color: theam.palette.primary.light,
-            // border: 'none',
-            // borderRadius: '5px',
             zIndex: 1000,
           }}
         ></img>
@@ -51,7 +41,6 @@ function App() {
         <Header />
       </div>
       <Nav />
-      <FooterPage />
     </>
   );
 }

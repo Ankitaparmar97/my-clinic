@@ -1,5 +1,4 @@
 import { createTheme } from '@mui/material/styles';
-// #TODO: change the color into hex
 
 const lightTheme = createTheme({
   palette: {

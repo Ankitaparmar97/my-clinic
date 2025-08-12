@@ -132,7 +132,7 @@ export default function ColorTabs() {
         <MenuItem
           sx={{ backgroundColor: theam.palette.primary.light, marginTop: '1px' }}
           component={NavLink}
-          to="/Dentalservices/wisdom-removal"
+          to="/Dentalservices#wth"
           onClick={handleClose}
         >
           Wisdom tooth removal
