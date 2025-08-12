@@ -2,6 +2,7 @@ import AboutUs from './AboutUs';
 import Gallery from './Gallery';
 import ContactUs from './ContactUs';
 import Carouselicon from './CarouselIcon';
+import Dentalservices from './Dentalservices';
 
 function HomePage() {
   return (
@@ -12,6 +13,9 @@ function HomePage() {
       </div>
       <div>
         <Gallery />
+      </div>
+      <div>
+        <Dentalservices />
       </div>
       <div>
         <ContactUs />
