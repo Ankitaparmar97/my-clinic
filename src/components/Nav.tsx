@@ -14,7 +14,7 @@ import { IconButton, Menu, MenuItem } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-//#TODO:  do not change the url path , resolve menu flickering
+//#TODO:  resolve menu flickering
 
 export default function ColorTabs() {
   const theam = useTheme();
@@ -65,14 +65,11 @@ export default function ColorTabs() {
                     transition: 'transform 0.3s ease',
                     transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
                   }}
-                  onMouseEnter={handleHover}
                 >
                   <ExpandMoreIcon />
                 </IconButton>
               </span>
             }
-            // onMouseEnter={handleHover}
-            // onMouseLeave={handleLeave}
           />
           <Tab value="/Gallery" label="Gallery" component={NavLink} to="/Gallery" />
           <Tab value="/Blog" label="Blog" component={NavLink} to="/Blog" />
