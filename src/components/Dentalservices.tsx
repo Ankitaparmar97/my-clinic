@@ -6,8 +6,21 @@ import { useTheme } from '@mui/material/styles';
 import { Box, Button } from '@mui/material';
 import Bread from './Breadcrumb';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function ActionAreaCard() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
   return (
     <Box sx={{ width: '100vw' }}>
       <Box>
@@ -29,46 +42,55 @@ export default function ActionAreaCard() {
             gap: '20px',
           }}
         >
-          <div id="dental-bridge">
+          <div id="bridge-treatment">
             <CardItem
               image="/service-bridgetreatment.jpg"
               title="Dental Bridge Treatment"
               description="A procedure involves preparing the adjacent teeth to support crowns.A dental bridge replaces missing teeth with false teeth. The bridge is attached to the teeth on either side of the gap. Bridges are usually made of metal,a mixture zirconia."
             />
           </div>
-          <CardItem
-            image="/services-implant.jpg"
-            title="Dental Implant"
-            description="Dental implant surgery replaces tooth roots with metal. A dental embed is a screw produced using titanium which is set in the jaw at the site of the missing teeth. The material utilized for a dental embed is titanium since it is a bio-viable material.                                             "
-          />
-
-          <CardItem
-            image="/services-teethwhitining.jpg"
-            title="Teeth cleaning"
-            description="Teeth cleaning is a standard dental methodology. We prompt our patients for a customary teeth cleaning like clockwork to 1 year. Other than that, anybody with a stained teeth, awful breath or draining gums ought to quickly complete a teeth cleaning.              "
-          />
-
-          <CardItem
-            image="/services-rootcanal.jpg"
-            title="Root canal treatment"
-            description="A root canal is the normal pit inside the foundations of the tooth. It comprises of pulp(nerves of the tooth. A root canal treatment is the treatment of the tooth root.This procedure helps to save a badly infected or damaged tooth from extraction                                                                                            "
-          />
-          <CardItem
-            image="/services-childdental.jpg"
-            title="Child teeth treatment"
-            description="We treat babies, little children to guarantee that your kids can appreciate great dental wellbeing all through the entirety of their early stages.Early intervention is crucial to prevent more serious problems as children's teeth develop.Uses small instruments to remove the tooth"
-          />
-          <CardItem
-            image="/services-smiledesining.jpeg"
-            title="Smile designing"
-            description="Smile designing in dentistry, also known as smile makeover, is a comprehensive approach to enhancing the appearance of a person's smile through a combination of cosmetic and restorative dental procedures.The duration of a smile design can be between 5 and 20 years"
-          />
-
-          <CardItem
-            image="/services-denture.jpg"
-            title="Denture"
-            description="Dentures (also known as false teeth).In dentistry, a denture is a removable appliance that replaces missing teeth and surrounding tissues. It is designed to restore functionality and aesthetics, allowing patients to chew, speak, and smile with confidence."
-          />
+          <div id="implants">
+            <CardItem
+              image="/services-implant.jpg"
+              title="Dental Implant"
+              description="Dental implant surgery replaces tooth roots with metal. A dental embed is a screw produced using titanium which is set in the jaw at the site of the missing teeth. The material utilized for a dental embed is titanium since it is a bio-viable material.                                             "
+            />
+          </div>
+          <div id="teeth-cleaning">
+            <CardItem
+              image="/services-teethwhitining.jpg"
+              title="Teeth cleaning"
+              description="Teeth cleaning is a standard dental methodology. We prompt our patients for a customary teeth cleaning like clockwork to 1 year. Other than that, anybody with a stained teeth, awful breath or draining gums ought to quickly complete a teeth cleaning.              "
+            />
+          </div>
+          <div id="root-canal">
+            <CardItem
+              image="/services-rootcanal.jpg"
+              title="Root canal treatment"
+              description="A root canal is the normal pit inside the foundations of the tooth. It comprises of pulp(nerves of the tooth. A root canal treatment is the treatment of the tooth root.This procedure helps to save a badly infected or damaged tooth from extraction                                                                                            "
+            />
+          </div>
+          <div id="child-treatment">
+            <CardItem
+              image="/services-childdental.jpg"
+              title="Child teeth treatment"
+              description="We treat babies, little children to guarantee that your kids can appreciate great dental wellbeing all through the entirety of their early stages.Early intervention is crucial to prevent more serious problems as children's teeth develop.Uses small instruments to remove the tooth"
+            />
+          </div>
+          <div id="smile-desining">
+            <CardItem
+              image="/services-smiledesining.jpeg"
+              title="Smile designing"
+              description="Smile designing in dentistry, also known as smile makeover, is a comprehensive approach to enhancing the appearance of a person's smile through a combination of cosmetic and restorative dental procedures.The duration of a smile design can be between 5 and 20 years"
+            />
+          </div>
+          <div id="denture">
+            <CardItem
+              image="/services-denture.jpg"
+              title="Denture"
+              description="Dentures (also known as false teeth).In dentistry, a denture is a removable appliance that replaces missing teeth and surrounding tissues. It is designed to restore functionality and aesthetics, allowing patients to chew, speak, and smile with confidence."
+            />
+          </div>
           <div id="wth">
             <CardItem
               image="/services-wtr.jpg"

@@ -20,38 +20,27 @@ export default function ColorTabs() {
   const theam = useTheme();
   const location = useLocation();
   let currentPath = location.pathname;
-  const [, setValue] = React.useState(location.pathname);
+
   if (currentPath.startsWith('/Dentalservices')) {
     currentPath = '/Dentalservices';
   }
-
-  const handleChange = (_: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
-  };
+  const [, setValue] = React.useState(location.pathname);
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const timeoutRef = React.useRef<number | undefined>(undefined);
   const open = Boolean(anchorEl);
 
-  const handleLeave = () => {
-    timeoutRef.current = window.setTimeout(() => {
-      setAnchorEl(null);
-    }, 1000);
-  };
+  // Open menu when hovering over tab
   const handleHover = (event: React.MouseEvent<HTMLElement>) => {
-    if (timeoutRef.current !== undefined) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = undefined; // reset
-    }
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
-    if (timeoutRef.current !== undefined) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = undefined;
-    }
+  // Close menu only when leaving both tab & menu
+  const handleLeave = () => {
     setAnchorEl(null);
+  };
+
+  const handleChange = (_: React.SyntheticEvent, newValue: string) => {
+    setValue(newValue);
   };
 
   return (
@@ -62,11 +51,13 @@ export default function ColorTabs() {
           <Tab value="/AboutUs" label="About Us" component={NavLink} to="/AboutUs" />
           <Tab
             value="/Dentalservices"
+            onMouseEnter={handleHover}
+            // onMouseLeave={handleLeave}
+
             label={
-              <span style={{ display: 'flex', alignItems: 'center' }}>
+              <span style={{ display: 'flex', alignItems: 'center' }} onMouseEnter={handleHover}>
                 DentalServices
                 <IconButton
-                  onClick={handleHover}
                   aria-controls={open ? 'menu' : undefined}
                   aria-haspopup="true"
                   aria-expanded={open ? 'true' : undefined}
@@ -74,13 +65,14 @@ export default function ColorTabs() {
                     transition: 'transform 0.3s ease',
                     transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
                   }}
+                  onMouseEnter={handleHover}
                 >
                   <ExpandMoreIcon />
                 </IconButton>
               </span>
             }
-            onMouseEnter={handleHover}
-            onMouseLeave={handleLeave}
+            // onMouseEnter={handleHover}
+            // onMouseLeave={handleLeave}
           />
           <Tab value="/Gallery" label="Gallery" component={NavLink} to="/Gallery" />
           <Tab value="/Blog" label="Blog" component={NavLink} to="/Blog" />
@@ -91,75 +83,75 @@ export default function ColorTabs() {
       <Menu
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
-        onClose={handleClose}
+        onClose={handleLeave}
         MenuListProps={{
-          onMouseEnter: () => clearTimeout(timeoutRef.current),
+          onMouseEnter: () => {},
           onMouseLeave: handleLeave,
         }}
       >
         <MenuItem
           sx={{ backgroundColor: theam.palette.primary.light, marginTop: '1px' }}
           component={NavLink}
-          to="/Dentalservices/implants"
-          onClick={handleClose}
-        >
-          Dental Implants
-        </MenuItem>
-        <MenuItem
-          sx={{ backgroundColor: theam.palette.primary.light, marginTop: '1px' }}
-          component={NavLink}
-          to="/Dentalservices/child-treatment"
-          onClick={handleClose}
-        >
-          Child treatment
-        </MenuItem>
-        <MenuItem
-          sx={{ backgroundColor: theam.palette.primary.light, marginTop: '1px' }}
-          component={NavLink}
-          to="/Dentalservices/whitening"
-          onClick={handleClose}
-        >
-          Teeth Whitening
-        </MenuItem>
-        <MenuItem
-          sx={{ backgroundColor: theam.palette.primary.light, marginTop: '1px' }}
-          component={NavLink}
-          to="/Dentalservices/root-canal"
-          onClick={handleClose}
-        >
-          Root Canal Treatment
-        </MenuItem>
-        <MenuItem
-          sx={{ backgroundColor: theam.palette.primary.light, marginTop: '1px' }}
-          component={NavLink}
-          to="/Dentalservices#wth"
-          onClick={handleClose}
-        >
-          Wisdom tooth removal
-        </MenuItem>
-        <MenuItem
-          sx={{ backgroundColor: theam.palette.primary.light, marginTop: '1px' }}
-          component={NavLink}
-          to="/Dentalservices/denture"
-          onClick={handleClose}
-        >
-          Denture
-        </MenuItem>
-        <MenuItem
-          sx={{ backgroundColor: theam.palette.primary.light, marginTop: '1px' }}
-          component={NavLink}
-          to="/Dentalservices/bridge-treatment"
-          onClick={handleClose}
+          to="/Dentalservices#bridge-treatment"
+          onClick={handleLeave}
         >
           Dental bridge treatment
         </MenuItem>
         <MenuItem
           sx={{ backgroundColor: theam.palette.primary.light, marginTop: '1px' }}
           component={NavLink}
-          to="/Dentalservices/smile-designing"
-          onClick={handleClose}
+          to="/Dentalservices#implants"
+          onClick={handleLeave}
+        >
+          Dental Implants
+        </MenuItem>
+        <MenuItem
+          sx={{ backgroundColor: theam.palette.primary.light, marginTop: '1px' }}
+          component={NavLink}
+          to="/Dentalservices#teeth-cleaning"
+          onClick={handleLeave}
+        >
+          Teeth Cleaning
+        </MenuItem>
+        <MenuItem
+          sx={{ backgroundColor: theam.palette.primary.light, marginTop: '1px' }}
+          component={NavLink}
+          to="/Dentalservices#root-canal"
+          onClick={handleLeave}
+        >
+          Root Canal Treatment
+        </MenuItem>
+        <MenuItem
+          sx={{ backgroundColor: theam.palette.primary.light, marginTop: '1px' }}
+          component={NavLink}
+          to="/Dentalservices#child-treatment"
+          onClick={handleLeave}
+        >
+          Child Teeth Treatment
+        </MenuItem>
+        <MenuItem
+          sx={{ backgroundColor: theam.palette.primary.light, marginTop: '1px' }}
+          component={NavLink}
+          to="/Dentalservices#smile-designing"
+          onClick={handleLeave}
         >
           Smile designing
+        </MenuItem>
+        <MenuItem
+          sx={{ backgroundColor: theam.palette.primary.light, marginTop: '1px' }}
+          component={NavLink}
+          to="/Dentalservices#denture"
+          onClick={handleLeave}
+        >
+          Denture
+        </MenuItem>
+        <MenuItem
+          sx={{ backgroundColor: theam.palette.primary.light, marginTop: '1px' }}
+          component={NavLink}
+          to="/Dentalservices#wth"
+          onClick={handleLeave}
+        >
+          Wisdom tooth removal
         </MenuItem>
       </Menu>
       <Routes>
