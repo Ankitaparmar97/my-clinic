@@ -5,11 +5,10 @@ import { useTheme } from '@mui/material/styles';
 import AddCallIcon from '@mui/icons-material/AddCall';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import EmailIcon from '@mui/icons-material/Email';
+import { CONTACT } from '../constants';
 
 export default function BasicTextFields() {
   const theam = useTheme();
-  const phoneNumber = '+919998086406';
-  const email = 'ankitaparmar@gmail.com';
 
   return (
     <>
@@ -58,7 +57,7 @@ export default function BasicTextFields() {
           autoComplete="off"
         >
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <form action="https://formsubmit.co/ankitavparmar186@gmail.com" method="POST">
+            <form action={`https://formsubmit.co/${CONTACT.Email}`} method="POST">
               <Box sx={{ display: 'flex', marginBottom: '15px' }}>
                 <TextField
                   id="name"
@@ -181,10 +180,10 @@ export default function BasicTextFields() {
                 <Box sx={{ marginLeft: '15px' }}>
                   <Typography sx={{ fontWeight: '700' }}>Phone</Typography>
                   <a
-                    href={`tel:${phoneNumber}`}
+                    href={`tel:${CONTACT.Mobile}`}
                     style={{ textDecoration: 'none', color: theam.palette.primary.light }}
                   >
-                    9998086406
+                    {CONTACT.Mobile}
                   </a>
                 </Box>
               </Box>
@@ -206,10 +205,10 @@ export default function BasicTextFields() {
                 <Box sx={{ marginLeft: '15px' }}>
                   <Typography sx={{ fontWeight: '700' }}>Email</Typography>
                   <a
-                    href={`mailto:${email}`}
+                    href={`mailto:${CONTACT.Email}`}
                     style={{ textDecoration: 'none', color: theam.palette.primary.light }}
                   >
-                    parmarbhautik9499@gmail.com
+                    {CONTACT.Email}
                   </a>
                 </Box>
               </Box>

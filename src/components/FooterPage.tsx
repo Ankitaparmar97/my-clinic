@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 import AddCallIcon from '@mui/icons-material/AddCall';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import EmailIcon from '@mui/icons-material/Email';
+import { CONTACT } from '../constants';
 
 export default function FooterPage() {
   const theam = useTheme();
-  const phoneNumber = '+919998086406';
-  const email = 'ankitaparmar@gmail.com';
   return (
     <>
       <Box sx={{ width: '100vw', backgroundColor: theam.palette.primary.dark }}>
@@ -101,10 +100,10 @@ export default function FooterPage() {
               <Box sx={{ marginLeft: '15px' }}>
                 <Typography sx={{ fontWeight: '700' }}>Phone</Typography>
                 <a
-                  href={`tel:${phoneNumber}`}
+                  href={`tel:${CONTACT.Mobile}`}
                   style={{ textDecoration: 'none', color: theam.palette.primary.light }}
                 >
-                  9998086406
+                  {CONTACT.Mobile}
                 </a>
               </Box>
             </Box>
@@ -115,10 +114,10 @@ export default function FooterPage() {
               <Box sx={{ marginLeft: '15px' }}>
                 <Typography sx={{ fontWeight: '700' }}>Email</Typography>
                 <a
-                  href={`mailto:${email}`}
+                  href={`mailto:${CONTACT.Email}`}
                   style={{ textDecoration: 'none', color: theam.palette.primary.light }}
                 >
-                  parmarbhautik9499@gmail.com
+                  {CONTACT.Email}
                 </a>
               </Box>
             </Box>
