@@ -4,11 +4,16 @@ import AddLocationIcon from '@mui/icons-material/AddLocation';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import { useTheme } from '@mui/material/styles';
 import AddCallIcon from '@mui/icons-material/AddCall';
+import { useTheme } from '@mui/material/styles';
 
 export default function ButtonAppBar() {
   const theam = useTheme();
+  const phoneNumber = '919426549472';
+  const message = 'Hello!';
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const instagramLink = 'https://www.instagram.com/tanvi_malhara/';
+  const facebookLink = 'https://www.facebook.com/your_username_or_page';
   return (
     <>
       <Box
@@ -20,23 +25,33 @@ export default function ButtonAppBar() {
           height: '40px',
         }}
       >
-        <Box sx={{ display: 'flex', marginLeft: '50px' }}>
+        <Box sx={{ display: 'flex', marginLeft: '70px' }}>
           <AddLocationIcon sx={{ color: theam.palette.primary.light }}></AddLocationIcon>
           <Typography sx={{ fontSize: '12px' }}>
-            C20,Bhavnagar dental hospital, Kaliyabid, Bhavnagar-364001
+            C27,Bhavnagar dental clinic, Kaliyabid, Bhavnagar-364001
           </Typography>
         </Box>
         <Box sx={{ marginRight: '40px' }}>
-          <FacebookOutlinedIcon
-            sx={{ color: theam.palette.primary.light, marginLeft: '5px' }}
-          ></FacebookOutlinedIcon>
-          <InstagramIcon
-            sx={{ color: theam.palette.primary.light, marginLeft: '5px' }}
-          ></InstagramIcon>
-          <WhatsAppIcon
-            sx={{ color: theam.palette.primary.light, marginLeft: '5px' }}
-          ></WhatsAppIcon>
-          <AddCallIcon sx={{ color: theam.palette.primary.light, marginLeft: '5px' }}></AddCallIcon>
+          <a href={facebookLink} target="_blank" rel="noopener noreferrer">
+            <FacebookOutlinedIcon
+              sx={{ color: theam.palette.primary.light, marginLeft: '5px' }}
+            ></FacebookOutlinedIcon>
+          </a>
+          <a href={instagramLink} target="_blank" rel="noopener noreferrer">
+            <InstagramIcon
+              sx={{ color: theam.palette.primary.light, marginLeft: '5px' }}
+            ></InstagramIcon>
+          </a>
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+            <WhatsAppIcon
+              sx={{ color: theam.palette.primary.light, marginLeft: '5px' }}
+            ></WhatsAppIcon>
+          </a>
+          <a href={`tel:${phoneNumber}`}>
+            <AddCallIcon
+              sx={{ color: theam.palette.primary.light, marginLeft: '5px' }}
+            ></AddCallIcon>
+          </a>
         </Box>
       </Box>
     </>

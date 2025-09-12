@@ -1,81 +1,168 @@
-import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import { useTheme } from '@mui/material/styles';
+import { Box, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function ActionAreaCard() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+  return (
+    <Box sx={{ width: '100vw' }}>
+      <Box sx={{ marginLeft: '10%', marginRight: '10%', marginTop: '3rem' }}>
+        <h2
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          Our Treatment Services
+        </h2>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '20px',
+          }}
+        >
+          <div id="bridge-treatment">
+            <CardItem
+              image="/service-bridgetreatment.jpg"
+              title="Dental Bridge Treatment"
+              description="A procedure involves preparing the adjacent teeth to support crowns.A dental bridge replaces missing teeth with false teeth. The bridge is attached to the teeth on either side of the gap. Bridges are usually made of metal,a mixture zirconia."
+            />
+          </div>
+          <div id="implants">
+            <CardItem
+              image="/services-implant.jpg"
+              title="Dental Implant"
+              description="Dental implant surgery replaces tooth roots with metal. A dental embed is a screw produced using titanium which is set in the jaw at the site of the missing teeth. The material utilized for a dental embed is titanium since it is a bio-viable material.                                             "
+            />
+          </div>
+          <div id="teeth-cleaning">
+            <CardItem
+              image="/services-teethwhitining.jpg"
+              title="Teeth cleaning"
+              description="Teeth cleaning is a standard dental methodology. We prompt our patients for a customary teeth cleaning like clockwork to 1 year. Other than that, anybody with a stained teeth, awful breath or draining gums ought to quickly complete a teeth cleaning.              "
+            />
+          </div>
+          <div id="root-canal">
+            <CardItem
+              image="/services-rootcanal.jpg"
+              title="Root canal treatment"
+              description="A root canal is the normal pit inside the foundations of the tooth. It comprises of pulp(nerves of the tooth. A root canal treatment is the treatment of the tooth root.This procedure helps to save a badly infected or damaged tooth from extraction                                                                                            "
+            />
+          </div>
+          <div id="child-treatment">
+            <CardItem
+              image="/services-childdental.jpg"
+              title="Child teeth treatment"
+              description="We treat babies, little children to guarantee that your kids can appreciate great dental wellbeing all through the entirety of their early stages.Early intervention is crucial to prevent more serious problems as children's teeth develop.Uses small instruments to remove the tooth"
+            />
+          </div>
+          <div id="smile-desining">
+            <CardItem
+              image="/services-smiledesining.jpeg"
+              title="Smile designing"
+              description="Smile designing in dentistry, also known as smile makeover, is a comprehensive approach to enhancing the appearance of a person's smile through a combination of cosmetic and restorative dental procedures.The duration of a smile design can be between 5 and 20 years"
+            />
+          </div>
+          <div id="denture">
+            <CardItem
+              image="/services-denture.jpg"
+              title="Denture"
+              description="Dentures (also known as false teeth).In dentistry, a denture is a removable appliance that replaces missing teeth and surrounding tissues. It is designed to restore functionality and aesthetics, allowing patients to chew, speak, and smile with confidence."
+            />
+          </div>
+          <div id="wth">
+            <CardItem
+              image="/services-wtr.jpg"
+              title="Wisdom tooth removal"
+              description="Wisdom tooth removal is a common oral surgery procedure. Dentists may recommend this treatment to preserve your oral health and protect your other teeth from possible issues in the future.Your wisdom teeth are in the very back of your mouth.They erupt between ages of 17 and 25."
+            />
+          </div>
+        </Box>
+      </Box>
+    </Box>
+  );
+}
+function CardItem({
+  image,
+  title,
+  description,
+}: {
+  image: string;
+  title: string;
+  description: string;
+}) {
   const theam = useTheme();
   return (
-    <Card>
-      <div style={{ display: 'flex' }}>
-        <CardActionArea>
-          <CardMedia component="img" image="implant.jpg" alt="green iguana" />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Dental Implant
-            </Typography>
-            <Typography variant="body2" sx={{ color: theam.palette.text.primary }}>
-              A dental implant is a surgical component that interfaces with the bone of the jaw or
-              skull to support a dental prosthesis such as a crown, bridge, denture, or facial
-              prosthesis or to act as an orthodontic anchor
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActionArea>
-          <CardMedia component="img" image="l-teeth.jpg" alt="green iguana" />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Dental Bridge Treatment
-            </Typography>
-            <Typography variant="body2" sx={{ color: theam.palette.text.primary }}>
-              A dental bridge permanently replaces missing teeth with false teeth. The bridge is
-              attached to the teeth on either side of the gap. Bridges are usually made of porcelain
-              or metal, a mixture of the 2, or zirconia.
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActionArea>
-          <CardMedia component="img" image="root-canal.jpg" alt="green iguana" />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Root Canal Treatment
-            </Typography>
-            <Typography variant="body2" sx={{ color: theam.palette.text.primary  }}>
-              Root canal is a treatment to repair and save a badly damaged or infected tooth instead
-              of removing it. The term "root canal" comes from cleaning of the canals inside a
-              tooth's root. Decades ago,
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActionArea>
-          <CardMedia component="img" image="child-dental.jpg" alt="green iguana" />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Child Dental Treatment
-            </Typography>
-            <Typography variant="body2" sx={{ color: theam.palette.text.primary  }}>
-              Every child preventive dental treatment to children. Additionally, we can also help
-              your child to get rid of bad habits like bruxism, lip sucking, thumb sucking, tongue
-              thrusting, and more.
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActionArea>
-          <CardMedia component="img" image="denture.jpg" alt="green iguana" />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Denture
-            </Typography>
-            <Typography variant="body2" sx={{ color: theam.palette.text.primary  }}>
-              We offer advanced denture solutions to suit all varieties of requirements. From
-              removable partial denture in Gandhinagar to complete denture, we offer a plethora of
-              solutions to match your varying needs.
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </div>
-    </Card>
+    <CardActionArea
+      sx={{
+        margin: '10px',
+        boxShadow: '0 15px 35px hsla(202, 74.00%, 71.40%, 0.20);',
+        borderBottom: '1px solid #06a3da',
+        borderRadius: '10px 10px 10px 10px',
+        '&:hover': {
+          transform: 'scale(1.05)', // slight zoom
+          boxShadow: '0 20px 40px hsla(202, 74%, 71%, 0.4)', // deeper shadow
+          borderBottom: '2px solid #0d487c', // darker blue border
+        },
+      }}
+    >
+      <CardMedia component="img" image={image} sx={{ borderRadius: '10px 10px 0px 0px' }} />
+      <CardContent>
+        <Box padding={'1rem'}>
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            color={theam.palette.text.primary}
+            fontWeight={600}
+            fontSize={'1rem'}
+          >
+            {title}
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{
+              color: 'theam.palette.text.secondary',
+              fontSize: '.8rem',
+              fontFamily: 'sans-serif',
+              marginBottom: '1rem',
+            }}
+          >
+            {description}
+          </Typography>
+          <Button
+            variant="contained"
+            color="primary"
+            component={Link}
+            to="/ContactUs"
+            sx={{
+              backgroundColor: theam.palette.primary.light,
+              '&:hover': {
+                color: 'white',
+              },
+            }}
+          >
+            Contact Us
+          </Button>
+        </Box>
+      </CardContent>
+    </CardActionArea>
   );
 }

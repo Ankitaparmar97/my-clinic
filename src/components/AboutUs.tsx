@@ -1,5 +1,4 @@
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import Bread from './Breadcrumb';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
@@ -9,37 +8,39 @@ function AboutUs() {
   return (
     <>
       <Box>
-        <Box>
-          <Bread />
-        </Box>
+        <h2
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          About Us
+        </h2>
         <Box sx={{ display: 'flex', width: '100vw' }}>
-          <Box sx={{ width: '50%', marginTop: '50px' }}>
+          <Box sx={{ width: '50%', marginTop: '3rem' }}>
             <Box
               style={{
                 color: theam.palette.primary.light,
-                // display: 'flex',
                 marginLeft: '130px',
                 fontSize: '1.5rem',
                 fontWeight: '700',
-                // width: '50vw',
               }}
             >
-              BHAVNAGAR DENTAL AND IMPLANT HOSPITAL
+              BHAVNAGAR DENTAL AND IMPLANT CLINIC
             </Box>
             <p
               style={{
                 fontFamily: 'poppins, sans-serif',
-                color: theam.palette.text.primary,
+                color: theam.palette.text.secondary,
                 marginLeft: '130px',
                 fontSize: '1rem',
               }}
             >
-              The morning sun filtered through the tall pine trees, casting golden patterns on the
-              forest floor. Birds chirped overhead as a soft breeze rustled the leaves, creating a
-              gentle, rhythmic sound. A narrow path wound its way through the woods, inviting anyone
-              passing by to explore its quiet mysteries. The scent of damp earth and wildflowers
-              filled the air, grounding every step in natures calm. It was one of those rare moments
-              where time seemed to pause, allowing the world to simply breathe.
+              We have been at the forefront of dental healthcare, committed to providing world-class
+              dental treatments in a friendly and most comfortable environment. We offer the best in
+              comprehensive dental services and recognize the importance of each patient's unique
+              needs and concerns while staying committed to providing quality and individualized
+              dental services
             </p>
             <Box sx={{ display: 'flex', marginLeft: '130px' }}>
               <Box>
@@ -111,7 +112,7 @@ function AboutUs() {
             </Box>
           </Box>
           <Box sx={{ width: '50%', overflow: 'hidden' }}>
-            <img src="Bhavnagar.jpg" style={{ height: '600px', padding: '30px' }} />
+            <img src="/bhavnagar-clinic.jpg" style={{ height: '600px', padding: '30px' }} />
           </Box>
         </Box>
         <Typography fontWeight={700} fontSize={'2rem'} marginLeft={'130px'} marginBottom={'20px'}>
