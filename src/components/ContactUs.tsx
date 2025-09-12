@@ -5,7 +5,7 @@ import { useTheme } from '@mui/material/styles';
 import AddCallIcon from '@mui/icons-material/AddCall';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import EmailIcon from '@mui/icons-material/Email';
-import { CONTACT } from '../constants';
+import { CONTACT, HOSPITAL_NAME } from '../constants';
 
 export default function BasicTextFields() {
   const theam = useTheme();
@@ -27,8 +27,8 @@ export default function BasicTextFields() {
           }}
         >
           <iframe
-            title="Bhavnagar Dental and Implant Hospital"
-            src="https://maps.google.com/maps?q=Bhavnagar%20dental%20and%20implant%20hospital%20Lakhubha%20Hall%20Road%2C%20opposite%20Om%20Plaza%2C%20near%20Ram%20Mantra%20Mandir%2C%20Ramnagar%2C%20Kaliyabid%2C%20Bhavnagar%2C%20Gujarat%20364002&z=14&output=embed"
+            title={HOSPITAL_NAME}
+            src={CONTACT.AddressLink}
             frameBorder="0"
             style={{
               position: 'absolute',
@@ -40,7 +40,7 @@ export default function BasicTextFields() {
             allowFullScreen
             aria-hidden="false"
             tabIndex={0}
-          ></iframe>
+          />
         </Box>
         <h2 style={{ marginLeft: '10%', fontWeight: '800' }}>Drop Us Message for Any Query</h2>
         <Box
@@ -232,7 +232,7 @@ export default function BasicTextFields() {
                   <Typography
                     style={{ textDecoration: 'none', color: theam.palette.primary.light }}
                   >
-                    C27,Bhavnagar dental clinic, Kaliyabid, Bhavnagar-364001
+                    {CONTACT.Address}
                   </Typography>
                 </Box>
               </Box>

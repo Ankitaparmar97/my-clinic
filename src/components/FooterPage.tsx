@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import AddCallIcon from '@mui/icons-material/AddCall';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import EmailIcon from '@mui/icons-material/Email';
-import { CONTACT } from '../constants';
+import { CONTACT, HOSPITAL_NAME } from '../constants';
 
 export default function FooterPage() {
   const theam = useTheme();
@@ -21,10 +21,10 @@ export default function FooterPage() {
           <Box sx={{ width: '25%', marginRight: '1rem' }}>
             <Box sx={{ display: 'flex' }}>
               <img src="/Header-teeth.png" style={{ width: '50px', height: '50px' }}></img>
-              <h3>Bhavnagar Dental</h3>
+              <h3>{HOSPITAL_NAME}</h3>
             </Box>
             <p style={{ textAlign: 'justify' }}>
-              Welcome To BHavnagar Dental Clinic, One of the best dental clinic in Bhavnagar, We are
+              Welcome To {HOSPITAL_NAME}, One of the best dental clinic in Bhavnagar, We are
               offering advanced dental treatments to the people of all ages. Our dental experts,
               specialists and dental assistants make sure that our patients have the best
               experience.
@@ -128,7 +128,7 @@ export default function FooterPage() {
               <Box sx={{ marginLeft: '15px' }}>
                 <Typography sx={{ fontWeight: '700' }}>Address</Typography>
                 <Typography style={{ textDecoration: 'none', color: theam.palette.primary.light }}>
-                  C27,Bhavnagar dental clinic, Kaliyabid, Bhavnagar-364001
+                  {CONTACT.Address}
                 </Typography>
               </Box>
             </Box>
@@ -151,8 +151,8 @@ export default function FooterPage() {
             padding: '2rem',
           }}
         >
-          Copyright Bhavnagar Dental Clinic All Right Reserved. Design & Developed by Ankita Parmar
-          and Darshan Kapadiya
+          Copyright {HOSPITAL_NAME} All Right Reserved. Design & Developed by Ankita Parmar and
+          Darshan Kapadiya
         </Typography>
       </Box>
     </>

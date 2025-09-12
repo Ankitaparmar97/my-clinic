@@ -3,6 +3,8 @@ import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import Achieve from './Achievement';
+import { HOSPITAL_NAME } from '../constants';
+
 function AboutUs() {
   const theam = useTheme();
   return (
@@ -26,7 +28,7 @@ function AboutUs() {
                 fontWeight: '700',
               }}
             >
-              BHAVNAGAR DENTAL AND IMPLANT CLINIC
+              {HOSPITAL_NAME}
             </Box>
             <p
               style={{

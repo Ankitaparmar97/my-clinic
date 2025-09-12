@@ -3,12 +3,13 @@ import { Paper } from '@mui/material';
 import Button from './Button';
 import { motion } from 'framer-motion';
 import { useTheme } from '@mui/material/styles';
+import { HOSPITAL_NAME } from '../constants';
 
 function Example() {
   const theam = useTheme();
   const items: CarouselItem[] = [
     {
-      name: 'Bhavnagar Dental Hospital',
+      name: HOSPITAL_NAME,
       description:
         'A dental implant is a surgical component that interfaces with the bone of the jaw or skull to support a dental prosthesis such as a crown.',
       image: 'l-denture.jpg',

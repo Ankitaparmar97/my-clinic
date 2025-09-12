@@ -1,41 +1,41 @@
 import { createTheme } from '@mui/material/styles';
 
-const lightTheme = createTheme({
+export const darkTheme = createTheme({
   palette: {
-    mode: 'light',
+    mode: 'dark',
     primary: {
-      main: '#0d487c',
-      light: '#06a3da',
-      dark: '#091e3e',
+      main: '#06a3da', // lighter blue for contrast
+      light: '#33bfff', // brighter accent blue
+      dark: '#0d487c', // deep navy for emphasis
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#FDFBFF',
-      light: '#ffa15b',
-      dark: '#b26023',
+      main: '#b388ff', // softer purple accent
+      light: '#d1a9ff',
+      dark: '#7c4dff',
       contrastText: '#ffffff',
     },
     error: {
-      main: '#d32f2f',
+      main: '#ef5350', // softened red for dark bg
     },
     warning: {
-      main: '#f57c00',
+      main: '#ffb74d', // amber shade
     },
     info: {
-      main: '#0288d1',
+      main: '#4fc3f7', // sky blue
     },
     success: {
-      main: '#2e7d32',
+      main: '#81c784', // green that pops on dark
     },
     background: {
-      default: '#f5f5f5',
-      paper: '#ffffff',
+      default: '#121212', // MUI standard dark bg
+      paper: '#1e1e1e', // card/dialog background
     },
     text: {
-      primary: '#222222',
-      secondary: '#6a6c72',
+      primary: '#ffffff', // strong contrast
+      secondary: '#b0b0b0', // muted grey
     },
-    divider: '#e0e0e0',
+    divider: '#333333',
   },
   typography: {
     fontFamily: `'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
@@ -59,4 +59,4 @@ const lightTheme = createTheme({
   },
 });
 
-export default lightTheme;
+export default darkTheme;

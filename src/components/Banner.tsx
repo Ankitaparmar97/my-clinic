@@ -6,6 +6,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import AddCallIcon from '@mui/icons-material/AddCall';
 import { useTheme } from '@mui/material/styles';
+import { CONTACT } from '../constants';
 
 export default function ButtonAppBar() {
   const theam = useTheme();
@@ -27,9 +28,7 @@ export default function ButtonAppBar() {
       >
         <Box sx={{ display: 'flex', marginLeft: '70px' }}>
           <AddLocationIcon sx={{ color: theam.palette.primary.light }}></AddLocationIcon>
-          <Typography sx={{ fontSize: '12px' }}>
-            C27,Bhavnagar dental clinic, Kaliyabid, Bhavnagar-364001
-          </Typography>
+          <Typography sx={{ fontSize: '12px' }}>{CONTACT.Address}</Typography>
         </Box>
         <Box sx={{ marginRight: '40px' }}>
           <a href={facebookLink} target="_blank" rel="noopener noreferrer">

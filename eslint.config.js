@@ -38,7 +38,8 @@ export default tseslint.config([
       'check-file/filename-naming-convention': [
         'error',
         {
-          '**/*.{ts,tsx}': 'PASCAL_CASE',
+          '**/*.{tsx}': 'PASCAL_CASE',
+          '**/*.{ts}': 'CAMEL_CASE'
         },
       ],
 

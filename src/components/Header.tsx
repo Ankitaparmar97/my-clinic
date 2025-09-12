@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
+import { HOSPITAL_NAME } from '../constants';
 
 export default function PrimarySearchAppBar() {
   const theme = useTheme();
@@ -31,7 +32,7 @@ export default function PrimarySearchAppBar() {
               component="div"
               sx={{ display: 'flex', alignItems: 'center' }}
             >
-              BHAVNAGAR DENTAL CLINIC AND IMPLANT CENTER
+              {HOSPITAL_NAME.toUpperCase()}
             </Typography>
           </Box>
         </Toolbar>
