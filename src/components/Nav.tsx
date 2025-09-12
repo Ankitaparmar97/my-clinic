@@ -6,7 +6,6 @@ import { NavLink, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './HomePage';
 import AboutUs from './AboutUs';
 import Gallery from './Gallery';
-import Blog from './Blog';
 import ContactUs from './ContactUs';
 import DentalServices from './Dentalservices';
 import Button from './Button';
@@ -14,6 +13,7 @@ import { IconButton, Menu, MenuItem } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ModeButton from './ModeButton';
 //#TODO:  resolve menu flickering
 
 export default function ColorTabs() {
@@ -72,10 +72,12 @@ export default function ColorTabs() {
             }
           />
           <Tab value="/Gallery" label="Gallery" component={NavLink} to="/Gallery" />
-          <Tab value="/Blog" label="Blog" component={NavLink} to="/Blog" />
           <Tab value="/ContactUs" label="Contact Us" component={NavLink} to="/ContactUs" />
         </Tabs>
-        <Button />
+        <Box sx={{ display: 'flex', padding: '10px', gap: '.5rem' }}>
+          <ModeButton />
+          <Button />
+        </Box>
       </div>
       <Menu
         anchorEl={anchorEl}
@@ -164,7 +166,6 @@ export default function ColorTabs() {
         <Route path="/Dentalservices/smile-designing" element={<DentalServices />} />
         <Route path="/Dentalservices/wisdom-removal" element={<DentalServices />} />
         <Route path="/Gallery" element={<Gallery />} />
-        <Route path="/Blog" element={<Blog />} />
         <Route path="/ContactUs" element={<ContactUs />} />
       </Routes>
     </Box>

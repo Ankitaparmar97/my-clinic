@@ -4,7 +4,6 @@ import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import { useTheme } from '@mui/material/styles';
 import { Box, Button } from '@mui/material';
-import Bread from './Breadcrumb';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -23,9 +22,6 @@ export default function ActionAreaCard() {
   }, [location]);
   return (
     <Box sx={{ width: '100vw' }}>
-      <Box>
-        <Bread />
-      </Box>
       <Box sx={{ marginLeft: '10%', marginRight: '10%', marginTop: '3rem' }}>
         <h2
           style={{

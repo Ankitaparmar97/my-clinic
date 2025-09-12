@@ -6,11 +6,6 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import AddCallIcon from '@mui/icons-material/AddCall';
 import { useTheme } from '@mui/material/styles';
-// import { PhoneCall } from 'react-flaticons';
-// import FaWhatsapp from 'react-flaticons';
-// import '@flaticon/flaticon-uicons/css/all/all.css'; // All icons (larger bundle)
-
-// import AddCallIcon from '@mui/icons-material/AddCall';
 
 export default function ButtonAppBar() {
   const theam = useTheme();

@@ -1,14 +1,15 @@
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import { useTheme } from '@mui/material/styles';
 
 function CardWithImage({ src }: { src: string }) {
+  const theam = useTheme();
   return (
     <Card
       sx={{
-        width: '250px',
-        height: '300px',
         margin: '10px',
+        backgroundColor: theam.palette.primary.main,
         boxShadow: '0 15px 35px rgba(15, 70, 143, 0.2)',
       }}
     >
@@ -21,11 +22,10 @@ function CardWithImage({ src }: { src: string }) {
 
 export default function OutlinedCard() {
   return (
-    <Box sx={{ display: 'flex', marginLeft: '130px' }}>
-      <CardWithImage src="smile.jpg" />
-      <CardWithImage src="smile.jpg" />
-      <CardWithImage src="smile.jpg" />
-      <CardWithImage src="smile.jpg" />
+    <Box sx={{ display: 'flex', marginLeft: '130px', marginRight: '130px' }}>
+      <CardWithImage src="achieve-image1.jpg" />
+      <CardWithImage src="achieve-image2.jpg" />
+      <CardWithImage src="achieve-image3.jpg" />
     </Box>
   );
 }

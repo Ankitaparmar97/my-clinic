@@ -1,7 +1,6 @@
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Bread from './Breadcrumb';
 
 function CardWithImage({ src }: { src: string }) {
   return (
@@ -34,9 +33,6 @@ export default function Gallery() {
   return (
     <>
       <Box sx={{ width: '100vw' }}>
-        <Box>
-          <Bread />
-        </Box>
         <h2
           style={{
             display: 'flex',
@@ -47,40 +43,32 @@ export default function Gallery() {
           Our Gallery
         </h2>
         <Box
-          sx={{ display: 'flex', justifyContent: 'center', marginLeft: '10%', marginRight: '10%' }}
+          sx={{
+            display: 'grid',
+            justifyContent: 'center',
+            marginLeft: '10%',
+            marginRight: '10%',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          }}
         >
+          <CardWithImage src="gallery-image1.jpg" />
+          <CardWithImage src="gallery-image2.jpg" />
+          <CardWithImage src="gallery-image3.jpg" />
+          <CardWithImage src="gallery-image4.jpg" />
+          <CardWithImage src="gallery-image5.jpg" />
+          <CardWithImage src="gallery-image6.jpg" />
+          <CardWithImage src="gallery-image7.jpg" />
+          <CardWithImage src="gallery-image8.jpg" />
+          <CardWithImage src="gallery-image9.jpg" />
+          <CardWithImage src="gallery-image10.jpg" />
           <CardWithImage src="smile.jpg" />
           <CardWithImage src="smile.jpg" />
           <CardWithImage src="smile.jpg" />
           <CardWithImage src="smile.jpg" />
           <CardWithImage src="smile.jpg" />
-        </Box>
-        <Box
-          sx={{ display: 'flex', justifyContent: 'center', marginLeft: '10%', marginRight: '10%' }}
-        >
           <CardWithImage src="smile.jpg" />
           <CardWithImage src="smile.jpg" />
           <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
-        </Box>
-        <Box
-          sx={{ display: 'flex', justifyContent: 'center', marginLeft: '10%', marginRight: '10%' }}
-        >
-          <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
-        </Box>
-        <Box
-          sx={{ display: 'flex', justifyContent: 'center', marginLeft: '10%', marginRight: '10%' }}
-        >
-          <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
-          {/* <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" /> */}
         </Box>
       </Box>
     </>
