@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import { useTheme } from '@mui/material/styles';
 
 function CardWithImage({ src }: { src: string }) {
   return (
@@ -30,9 +31,10 @@ function CardWithImage({ src }: { src: string }) {
   );
 }
 export default function Gallery() {
+  const theam = useTheme();
   return (
     <>
-      <Box sx={{ width: '100vw' }}>
+      <Box sx={{ width: '100%', backgroundColor: theam.palette.background.default }}>
         <h2
           style={{
             display: 'flex',
@@ -46,8 +48,8 @@ export default function Gallery() {
           sx={{
             display: 'grid',
             justifyContent: 'center',
-            marginLeft: '10%',
-            marginRight: '10%',
+            marginLeft: '8.125rem',
+            marginRight: '8.125rem',
             gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
           }}
         >
@@ -61,14 +63,6 @@ export default function Gallery() {
           <CardWithImage src="gallery-image8.jpg" />
           <CardWithImage src="gallery-image9.jpg" />
           <CardWithImage src="gallery-image10.jpg" />
-          <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
-          <CardWithImage src="smile.jpg" />
         </Box>
       </Box>
     </>

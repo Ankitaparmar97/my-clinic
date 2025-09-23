@@ -9,7 +9,7 @@ export default function FooterPage() {
   const theam = useTheme();
   return (
     <>
-      <Box sx={{ width: '100vw', backgroundColor: theam.palette.primary.dark }}>
+      <Box sx={{ width: '100%', backgroundColor: theam.palette.primary.dark }}>
         <Box
           sx={{
             marginLeft: '10%',
@@ -20,7 +20,10 @@ export default function FooterPage() {
         >
           <Box sx={{ width: '25%', marginRight: '1rem' }}>
             <Box sx={{ display: 'flex' }}>
-              <img src="/Header-teeth.png" style={{ width: '50px', height: '50px' }}></img>
+              <img
+                src="/header-teeth.png"
+                style={{ width: '50px', height: '50px', marginTop: '1.2rem' }}
+              ></img>
               <h3>{HOSPITAL_NAME}</h3>
             </Box>
             <p style={{ textAlign: 'justify' }}>
@@ -32,61 +35,98 @@ export default function FooterPage() {
           </Box>
           <Box sx={{ width: '25%' }}>
             <h3>Useful Link</h3>
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link
+              to={'/'}
+              style={{ color: theam.palette.primary.contrastText }}
+              onClick={() => window.scrollTo(0, 0)}
+            >
               Home
             </Link>
             <br />
-            <Link to={'/AboutUs'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link
+              to={'/AboutUs'}
+              style={{ color: theam.palette.primary.contrastText }}
+              onClick={() => window.scrollTo(0, 0)}
+            >
               AboutUs
             </Link>
             <br />
-            <Link to={'/Dentalservices'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link
+              to={'/Dentalservices'}
+              style={{ color: theam.palette.primary.contrastText }}
+              onClick={() => window.scrollTo(0, 0)}
+            >
               DentalServices
             </Link>
             <br />
-            <Link to={'/Gallery'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link
+              to={'/Gallery'}
+              style={{ color: theam.palette.primary.contrastText }}
+              onClick={() => window.scrollTo(0, 0)}
+            >
               Gallery
             </Link>
             <br />
-            <Link to={'/Blog'} style={{ color: theam.palette.primary.contrastText }}>
-              Blog
-            </Link>
-            <br />
-            <Link to={'/ContactUs'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link
+              to={'/ContactUs'}
+              style={{ color: theam.palette.primary.contrastText }}
+              onClick={() => window.scrollTo(0, 0)}
+            >
               ContactUs
             </Link>
           </Box>
           <Box sx={{ width: '25%' }}>
             <h3>Our services</h3>
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link
+              to={'/Dentalservices#implants'}
+              style={{ color: theam.palette.primary.contrastText }}
+            >
               Dental Implant
             </Link>
             <br />
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link
+              to={'/Dentalservices#bridge-treatment'}
+              style={{ color: theam.palette.primary.contrastText }}
+            >
               Dental Bridge Treatment
             </Link>
             <br />
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link
+              to={'/Dentalservices#smile-desining'}
+              style={{ color: theam.palette.primary.contrastText }}
+            >
               Smile Desining
             </Link>
             <br />
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link
+              to={'/Dentalservices#teeth-cleaning'}
+              style={{ color: theam.palette.primary.contrastText }}
+            >
               Teeth Cleaning
             </Link>
             <br />
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link
+              to={'/Dentalservices#denture'}
+              style={{ color: theam.palette.primary.contrastText }}
+            >
               Denture
             </Link>
             <br />
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link
+              to={'/Dentalservices#child-treatment'}
+              style={{ color: theam.palette.primary.contrastText }}
+            >
               Child Dental Treatment
             </Link>
             <br />
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link
+              to={'/Dentalservices#root-canal'}
+              style={{ color: theam.palette.primary.contrastText }}
+            >
               Root canal Treatment
             </Link>
             <br />
-            <Link to={'/'} style={{ color: theam.palette.primary.contrastText }}>
+            <Link to={'/Dentalservices#wth'} style={{ color: theam.palette.primary.contrastText }}>
               Wisdom Tooth Removal
             </Link>
             <br />

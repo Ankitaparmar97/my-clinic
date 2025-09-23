@@ -10,15 +10,15 @@ export default function PrimarySearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
-        position="static"
-        sx={{ backgroundColor: theme.palette.primary.main, height: '100px' }}
+        position="fixed"
+        sx={{ backgroundColor: theme.palette.primary.main, height: '100px', top: '40px' }}
       >
         <Toolbar
           sx={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            marginLeft: '40px',
+            marginLeft: '110px',
             height: '100%',
           }}
         >

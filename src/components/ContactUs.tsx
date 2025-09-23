@@ -12,7 +12,7 @@ export default function BasicTextFields() {
 
   return (
     <>
-      <Box sx={{ width: '100vw' }}>
+      <Box sx={{ width: '100%', backgroundColor: theam.palette.background.default }}>
         <h2 style={{ display: 'flex', justifyContent: 'center', fontWeight: '1000' }}>
           Contact Us
         </h2>

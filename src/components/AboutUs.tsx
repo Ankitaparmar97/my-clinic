@@ -7,9 +7,12 @@ import { HOSPITAL_NAME } from '../constants';
 
 function AboutUs() {
   const theam = useTheme();
+  const imgSrc = theam.palette.mode === 'dark' ? '/medical-symbol2.png' : '/medical-symbol.png';
+
+  const imgsrc = theam.palette.mode === 'dark' ? '/dentist-chair2.png' : '/dentist-chair.png';
   return (
     <>
-      <Box>
+      <Box sx={{ backgroundColor: theam.palette.background.default }}>
         <h2
           style={{
             display: 'flex',
@@ -18,12 +21,12 @@ function AboutUs() {
         >
           About Us
         </h2>
-        <Box sx={{ display: 'flex', width: '100vw' }}>
-          <Box sx={{ width: '50%', marginTop: '3rem' }}>
+        <Box sx={{ display: 'flex', width: '100%' }}>
+          <Box sx={{ width: '60%', marginTop: '3rem' }}>
             <Box
               style={{
                 color: theam.palette.primary.light,
-                marginLeft: '130px',
+                marginLeft: '8.125rem',
                 fontSize: '1.5rem',
                 fontWeight: '700',
               }}
@@ -34,7 +37,7 @@ function AboutUs() {
               style={{
                 fontFamily: 'poppins, sans-serif',
                 color: theam.palette.text.secondary,
-                marginLeft: '130px',
+                marginLeft: '8.125rem',
                 fontSize: '1rem',
               }}
             >
@@ -44,7 +47,7 @@ function AboutUs() {
               needs and concerns while staying committed to providing quality and individualized
               dental services
             </p>
-            <Box sx={{ display: 'flex', marginLeft: '130px' }}>
+            <Box sx={{ display: 'flex', marginLeft: '8.125rem' }}>
               <Box>
                 <Box sx={{ display: 'flex', marginBottom: '18px' }}>
                   <CheckCircleIcon sx={{ color: theam.palette.primary.light }}></CheckCircleIcon>
@@ -70,7 +73,7 @@ function AboutUs() {
                       boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2);',
                     }}
                   >
-                    <img src="medical-symbol.png" />
+                    <img src={imgSrc} />
                   </Box>
                   <Box sx={{ marginLeft: '15px' }}>
                     <Typography sx={{ fontSize: '2rem', fontWeight: '500' }}>5 years</Typography>
@@ -103,7 +106,7 @@ function AboutUs() {
                       boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2);',
                     }}
                   >
-                    <img src="dentist-chair.png" />
+                    <img src={imgsrc} />
                   </Box>
                   <Box sx={{ marginLeft: '15px' }}>
                     <Typography sx={{ fontSize: '2rem', fontWeight: '500' }}>1800+</Typography>
@@ -113,11 +116,16 @@ function AboutUs() {
               </Box>
             </Box>
           </Box>
-          <Box sx={{ width: '50%', overflow: 'hidden' }}>
-            <img src="/bhavnagar-clinic.jpg" style={{ height: '600px', padding: '30px' }} />
+          <Box sx={{ width: '40%', overflow: 'hidden', marginRight: '8.125rem' }}>
+            <img src="/bhavnagar-clinic.jpg" style={{ height: '600px', paddingLeft: '40px' }} />
           </Box>
         </Box>
-        <Typography fontWeight={700} fontSize={'2rem'} marginLeft={'130px'} marginBottom={'20px'}>
+        <Typography
+          fontWeight={700}
+          fontSize={'2rem'}
+          marginLeft={'8.125rem'}
+          marginBottom={'20px'}
+        >
           Our Achievements
         </Typography>
         <Box>
