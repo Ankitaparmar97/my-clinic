@@ -22,7 +22,7 @@ function CardWithImage({ src }: { src: string }) {
 
 export default function OutlinedCard() {
   return (
-    <Box sx={{ display: 'flex', marginLeft: '130px', marginRight: '130px' }}>
+    <Box sx={{ display: 'flex', marginLeft: '8.125rem', marginRight: '8.125rem' }}>
       <CardWithImage src="achieve-image1.jpg" />
       <CardWithImage src="achieve-image2.jpg" />
       <CardWithImage src="achieve-image3.jpg" />

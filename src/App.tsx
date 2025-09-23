@@ -2,6 +2,7 @@ import Header from './components/Header';
 import Banner from './components/Banner';
 import Nav from './components/Nav';
 import { useTheme } from '@mui/material/styles';
+import FooterPage from './components/FooterPage';
 
 function App() {
   const theam = useTheme();
@@ -41,6 +42,7 @@ function App() {
         <Header />
       </div>
       <Nav />
+      <FooterPage />
     </>
   );
 }

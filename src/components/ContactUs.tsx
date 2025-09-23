@@ -5,15 +5,14 @@ import { useTheme } from '@mui/material/styles';
 import AddCallIcon from '@mui/icons-material/AddCall';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import EmailIcon from '@mui/icons-material/Email';
+import { CONTACT, HOSPITAL_NAME } from '../constants';
 
 export default function BasicTextFields() {
   const theam = useTheme();
-  const phoneNumber = '+919998086406';
-  const email = 'ankitaparmar@gmail.com';
 
   return (
     <>
-      <Box sx={{ width: '100vw' }}>
+      <Box sx={{ width: '100%', backgroundColor: theam.palette.background.default }}>
         <h2 style={{ display: 'flex', justifyContent: 'center', fontWeight: '1000' }}>
           Contact Us
         </h2>
@@ -28,8 +27,8 @@ export default function BasicTextFields() {
           }}
         >
           <iframe
-            title="Bhavnagar Dental and Implant Hospital"
-            src="https://maps.google.com/maps?q=Bhavnagar%20dental%20and%20implant%20hospital%20Lakhubha%20Hall%20Road%2C%20opposite%20Om%20Plaza%2C%20near%20Ram%20Mantra%20Mandir%2C%20Ramnagar%2C%20Kaliyabid%2C%20Bhavnagar%2C%20Gujarat%20364002&z=14&output=embed"
+            title={HOSPITAL_NAME}
+            src={CONTACT.AddressLink}
             frameBorder="0"
             style={{
               position: 'absolute',
@@ -41,7 +40,7 @@ export default function BasicTextFields() {
             allowFullScreen
             aria-hidden="false"
             tabIndex={0}
-          ></iframe>
+          />
         </Box>
         <h2 style={{ marginLeft: '10%', fontWeight: '800' }}>Drop Us Message for Any Query</h2>
         <Box
@@ -58,7 +57,7 @@ export default function BasicTextFields() {
           autoComplete="off"
         >
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <form action="https://formsubmit.co/ankitavparmar186@gmail.com" method="POST">
+            <form action={`https://formsubmit.co/${CONTACT.Email}`} method="POST">
               <Box sx={{ display: 'flex', marginBottom: '15px' }}>
                 <TextField
                   id="name"
@@ -181,10 +180,10 @@ export default function BasicTextFields() {
                 <Box sx={{ marginLeft: '15px' }}>
                   <Typography sx={{ fontWeight: '700' }}>Phone</Typography>
                   <a
-                    href={`tel:${phoneNumber}`}
+                    href={`tel:${CONTACT.Mobile}`}
                     style={{ textDecoration: 'none', color: theam.palette.primary.light }}
                   >
-                    9998086406
+                    {CONTACT.Mobile}
                   </a>
                 </Box>
               </Box>
@@ -206,10 +205,10 @@ export default function BasicTextFields() {
                 <Box sx={{ marginLeft: '15px' }}>
                   <Typography sx={{ fontWeight: '700' }}>Email</Typography>
                   <a
-                    href={`mailto:${email}`}
+                    href={`mailto:${CONTACT.Email}`}
                     style={{ textDecoration: 'none', color: theam.palette.primary.light }}
                   >
-                    parmarbhautik9499@gmail.com
+                    {CONTACT.Email}
                   </a>
                 </Box>
               </Box>
@@ -233,7 +232,7 @@ export default function BasicTextFields() {
                   <Typography
                     style={{ textDecoration: 'none', color: theam.palette.primary.light }}
                   >
-                    C27,Bhavnagar dental clinic, Kaliyabid, Bhavnagar-364001
+                    {CONTACT.Address}
                   </Typography>
                 </Box>
               </Box>

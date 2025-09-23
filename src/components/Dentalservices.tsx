@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export default function ActionAreaCard() {
+  const theam = useTheme();
   const location = useLocation();
 
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function ActionAreaCard() {
     }
   }, [location]);
   return (
-    <Box sx={{ width: '100vw' }}>
+    <Box sx={{ width: '100%', backgroundColor: theam.palette.background.default }}>
       <Box sx={{ marginLeft: '10%', marginRight: '10%', marginTop: '3rem' }}>
         <h2
           style={{
@@ -35,7 +36,7 @@ export default function ActionAreaCard() {
           sx={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '20px',
+            gap: 3,
           }}
         >
           <div id="bridge-treatment">

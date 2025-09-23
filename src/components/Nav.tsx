@@ -44,8 +44,16 @@ export default function ColorTabs() {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+    <Box sx={{ width: '100%', backgroundColor: theam.palette.background.default }}>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginLeft: '8.125rem',
+          marginRight: '120px',
+          marginTop: '140px',
+        }}
+      >
         <Tabs value={currentPath} onChange={handleChange} aria-label="secondary tabs example">
           <Tab value="/" label="Home" component={NavLink} to="/" />
           <Tab value="/AboutUs" label="About Us" component={NavLink} to="/AboutUs" />

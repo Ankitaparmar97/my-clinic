@@ -1,8 +1,7 @@
 // theme/ThemeContext.tsx
 import { createContext, useState, useEffect, useMemo, ReactNode } from 'react';
 import { ThemeProvider, CssBaseline, Theme } from '@mui/material';
-import lightTheme from '../theme/Light';
-import darkTheme from '../theme/Dark';
+import { lightTheme, darkTheme } from '../theme';
 
 interface ThemeContextType {
   mode: 'light' | 'dark';

@@ -1,4 +1,3 @@
-// ThemeSwitch.tsx
 import { styled } from '@mui/material/styles';
 import Switch, { SwitchProps } from '@mui/material/Switch';
 
@@ -25,7 +24,7 @@ const ThemeSwitch = styled((props: SwitchProps) => (
     },
   },
   '& .MuiSwitch-thumb': {
-    backgroundColor: theme.palette.mode === 'dark' ? '#003892' : '#fdd835', // blue for dark, yellow for light
+    backgroundColor: theme.palette.mode === 'dark' ? '#0d487c' : '#0d487c', // blue for dark, yellow for light
     width: 28,
     height: 28,
     transition: 'background-color 300ms ease',
