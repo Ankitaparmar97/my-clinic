@@ -23,13 +23,13 @@ function Example() {
     {
       name: 'Root Canal',
       description:
-        'A dental implant is a surgical component that interfaces with the bone of the jaw or skull to support a dental prosthesis such as a crown.',
+        'A root canal is the normal pit inside the foundations of the tooth. A root canal treatment is the treatment of the tooth root.This procedure helps to save a badly infected or damaged tooth from extraction',
       image: 'smile.jpg',
     },
     {
-      name: 'Teeth whitining',
+      name: 'Teeth Cleaning',
       description:
-        'A dental implant is a surgical component that interfaces with the bone of the jaw or skull to support a dental prosthesis such as a crown.',
+        'Teeth cleaning is a standard dental methodology. We prompt our patients for a customary teeth cleaning like clockwork to 1 year. Other than that, anybody with a stained teeth, awful breath or draining gums ought to quickly complete a teeth cleaning.',
       image: 'l-teeth.jpg',
     },
   ];
@@ -67,7 +67,9 @@ function Item({ item }: { item: CarouselItem }) {
   return (
     <Paper
       style={{
-        padding: 20,
+        paddingLeft: 130,
+        // marginLeft: '8.125rem',
+        // marginRight: '8.125rem',
         textAlign: 'center',
         backgroundImage: `url(${item.image})`,
         backgroundSize: 'cover',

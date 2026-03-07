@@ -11,6 +11,7 @@ import DentalServices from './Dentalservices';
 import Button from './Button';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import ScrollToTop from './ScrollToTop';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ModeButton from './ModeButton';
@@ -176,6 +177,7 @@ export default function ColorTabs() {
         <Route path="/Gallery" element={<Gallery />} />
         <Route path="/ContactUs" element={<ContactUs />} />
       </Routes>
+      <ScrollToTop />
     </Box>
   );
 }

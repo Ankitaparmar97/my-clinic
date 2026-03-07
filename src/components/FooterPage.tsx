@@ -12,8 +12,8 @@ export default function FooterPage() {
       <Box sx={{ width: '100%', backgroundColor: theam.palette.primary.dark }}>
         <Box
           sx={{
-            marginLeft: '10%',
-            marginRight: '10%',
+            marginLeft: '8.125rem',
+            marginRight: '8.125rem',
             display: 'flex',
             color: theam.palette.primary.contrastText,
           }}
@@ -178,8 +178,8 @@ export default function FooterPage() {
           sx={{
             height: '0.1px',
             backgroundColor: theam.palette.primary.contrastText,
-            marginLeft: '10%',
-            marginRight: '10%',
+            marginLeft: '8.125rem',
+            marginRight: '8.125rem',
             marginTop: '5rem',
           }}
         ></Box>
@@ -189,6 +189,8 @@ export default function FooterPage() {
             display: 'flex',
             justifyContent: 'center',
             padding: '2rem',
+            marginLeft: '8.125rem',
+            marginRight: '8.125rem',
           }}
         >
           Copyright {HOSPITAL_NAME} All Right Reserved. Design & Developed by Ankita Parmar and
