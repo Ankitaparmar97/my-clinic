@@ -15,15 +15,34 @@ export default function ActionAreaCard() {
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+
+      const scrollToElement = () => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        }
+      };
+
+      setTimeout(scrollToElement, 100);
     }
   }, [location]);
   return (
-    <Box sx={{ width: '100%', backgroundColor: theam.palette.background.default }}>
-      <Box sx={{ marginLeft: '10%', marginRight: '10%', marginTop: '3rem' }}>
+    <Box
+      sx={{
+        width: '100%',
+        backgroundColor: theam.palette.background.default,
+        // mt: { xs: '10.5rem', md: '13rem' },
+      }}
+    >
+      <Box
+        sx={{
+          px: { xs: 2, sm: 4, md: 16 }, // responsive padding
+          // marginTop: { xs: 2, sm: 4, md: 6 },
+        }}
+      >
         <h2
           style={{
             display: 'flex',
@@ -35,7 +54,12 @@ export default function ActionAreaCard() {
         <Box
           sx={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gridTemplateColumns: {
+              xs: 'repeat(1, 1fr)', // ✅ 2 cards on mobile
+              sm: 'repeat(2, 1fr)', // tablet
+              md: 'repeat(3, 1fr)', // small laptop
+              lg: 'repeat(4, 1fr)', // desktop
+            },
             gap: 3,
           }}
         >
@@ -74,7 +98,7 @@ export default function ActionAreaCard() {
               description="We treat babies, little children to guarantee that your kids can appreciate great dental wellbeing all through the entirety of their early stages.Early intervention is crucial to prevent more serious problems as children's teeth develop.Uses small instruments to remove the tooth"
             />
           </div>
-          <div id="smile-desining">
+          <div id="smile-designing">
             <CardItem
               image="/services-smiledesining.jpeg"
               title="Smile designing"
@@ -85,7 +109,7 @@ export default function ActionAreaCard() {
             <CardItem
               image="/services-denture.jpg"
               title="Denture"
-              description="Dentures (also known as false teeth).In dentistry, a denture is a removable appliance that replaces missing teeth and surrounding tissues. It is designed to restore functionality and aesthetics, allowing patients to chew, speak, and smile with confidence."
+              description="Dentures (also known as false teeth).In dentistry, a denture is a removable appliance that replaces missing teeth and surrounding tissues. It is designed to restore functionality and aesthetics, allowing patients to chew, speak, and smile with confidence. Average lifespan of a denture is seven to 10 years. "
             />
           </div>
           <div id="wth">
@@ -113,7 +137,7 @@ function CardItem({
   return (
     <CardActionArea
       sx={{
-        margin: '10px',
+        // margin: '10px',
         boxShadow: '0 15px 35px hsla(202, 74.00%, 71.40%, 0.20);',
         borderBottom: '1px solid #06a3da',
         borderRadius: '10px 10px 10px 10px',
@@ -126,7 +150,7 @@ function CardItem({
     >
       <CardMedia component="img" image={image} sx={{ borderRadius: '10px 10px 0px 0px' }} />
       <CardContent>
-        <Box padding={'1rem'}>
+        <Box>
           <Typography
             gutterBottom
             variant="h5"
@@ -140,7 +164,7 @@ function CardItem({
           <Typography
             variant="body2"
             sx={{
-              color: 'theam.palette.text.secondary',
+              color: theam.palette.text.secondary,
               fontSize: '.8rem',
               fontFamily: 'sans-serif',
               marginBottom: '1rem',

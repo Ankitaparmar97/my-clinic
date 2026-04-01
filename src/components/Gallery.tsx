@@ -7,7 +7,7 @@ function CardWithImage({ src }: { src: string }) {
   return (
     <Card
       sx={{
-        margin: '10px',
+        overflow: 'hidden',
         boxShadow: '0 15px 35px rgba(15, 70, 143, 0.2)',
       }}
     >
@@ -34,23 +34,35 @@ export default function Gallery() {
   const theam = useTheme();
   return (
     <>
-      <Box sx={{ width: '100%', backgroundColor: theam.palette.background.default }}>
-        <h2
-          style={{
+      <Box
+        sx={{
+          width: '100%',
+          backgroundColor: theam.palette.background.default,
+          // mt: { xs: '10.5rem', md: '13rem' },
+          px: { xs: 2, sm: 4, md: 16 }, // responsive padding
+        }}
+      >
+        <Box
+          component="h2"
+          sx={{
             display: 'flex',
             justifyContent: 'center',
-            marginTop: '3rem',
           }}
         >
           Our Gallery
-        </h2>
+        </Box>
         <Box
           sx={{
             display: 'grid',
             justifyContent: 'center',
-            marginLeft: '8.125rem',
-            marginRight: '8.125rem',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            // mx: { xs: 6, sm: 10, md: 16 }, // responsive margin
+            gap: 2,
+            gridTemplateColumns: {
+              xs: 'repeat(1, 1fr)', // ✅ 2 cards on mobile
+              sm: 'repeat(2, 1fr)', // tablet
+              md: 'repeat(3, 1fr)', // small laptop
+              lg: 'repeat(4, 1fr)', // desktop
+            },
           }}
         >
           <CardWithImage src="gallery-image1.jpg" />

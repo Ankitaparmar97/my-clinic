@@ -7,239 +7,224 @@ import AddLocationIcon from '@mui/icons-material/AddLocation';
 import EmailIcon from '@mui/icons-material/Email';
 import { CONTACT, HOSPITAL_NAME } from '../constants';
 
-export default function BasicTextFields() {
-  const theam = useTheme();
+export default function ContactPage() {
+  const theme = useTheme();
 
   return (
-    <>
-      <Box sx={{ width: '100%', backgroundColor: theam.palette.background.default }}>
-        <h2 style={{ display: 'flex', justifyContent: 'center', fontWeight: '1000' }}>
-          Contact Us
-        </h2>
-        <Box
-          sx={{
-            position: 'relative',
-            paddingBottom: '30%',
-            height: 0,
-            overflow: 'hidden',
-            marginLeft: '10%',
-            marginRight: '10%',
+    <Box
+      sx={{
+        width: '100%',
+        backgroundColor: theme.palette.background.default,
+        px: { xs: 2, sm: 4, md: 16 }, // responsive padding
+
+        // mt: { xs: '8rem', md: '13rem' },
+        pb: 6,
+      }}
+    >
+      {/* <Container maxWidth="lg"> */}
+      {/* Heading */}
+      <h2
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        Contact Us
+      </h2>
+
+      {/* Map */}
+      <Box
+        sx={{
+          width: '100%',
+          height: { xs: '250px', md: '400px' },
+          mb: 5,
+        }}
+      >
+        <iframe
+          title={HOSPITAL_NAME}
+          src={CONTACT.AddressLink}
+          style={{
+            width: '100%',
+            height: '100%',
+            border: 0,
           }}
-        >
-          <iframe
-            title={HOSPITAL_NAME}
-            src={CONTACT.AddressLink}
-            frameBorder="0"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-            }}
-            allowFullScreen
-            aria-hidden="false"
-            tabIndex={0}
+          loading="lazy"
+        />
+      </Box>
+
+      {/* Sub Heading */}
+      <Typography sx={{ fontWeight: 700, mb: 3 }}>Drop Us Message for Any Query</Typography>
+
+      {/* Main Section */}
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          gap: 4,
+        }}
+      >
+        {/* ================= FORM ================= */}
+        <Box sx={{ flex: 1 }}>
+          <form action={`https://formsubmit.co/${CONTACT.Email}`} method="POST">
+            {/* Row 1 */}
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: { xs: 'column', md: 'row' },
+                gap: 2,
+                mb: 2,
+              }}
+            >
+              <TextField name="name" label="Name" fullWidth required sx={inputStyle} />
+              <TextField name="email" label="Email" type="email" fullWidth sx={inputStyle} />
+            </Box>
+
+            {/* Row 2 */}
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: { xs: 'column', md: 'row' },
+                gap: 2,
+                mb: 2,
+              }}
+            >
+              <TextField name="phone" label="Phone" fullWidth required sx={inputStyle} />
+              <TextField name="address" label="Address" fullWidth sx={inputStyle} />
+            </Box>
+
+            {/* Message */}
+            <Box sx={{ mb: 2 }}>
+              <TextField
+                name="message"
+                label="Message"
+                multiline
+                rows={4}
+                fullWidth
+                sx={inputStyle}
+              />
+            </Box>
+
+            {/* Hidden Inputs */}
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="box" />
+            <input type="hidden" name="_next" value="http://localhost:5174/ContactUs" />
+
+            {/* Button */}
+            <Box sx={{ textAlign: 'center' }}>
+              <Button
+                type="submit"
+                variant="contained"
+                sx={{
+                  backgroundColor: theme.palette.primary.light,
+                  color: theme.palette.primary.contrastText,
+                  px: 4,
+                }}
+              >
+                Send Message
+              </Button>
+            </Box>
+          </form>
+        </Box>
+
+        {/* ================= CONTACT INFO ================= */}
+        <Box sx={{ flex: 0.8 }}>
+          {/* Phone */}
+          <ContactItem
+            icon={<AddCallIcon />}
+            title="Phone"
+            value={CONTACT.Mobile}
+            link={`tel:${CONTACT.Mobile}`}
+            theme={theme}
+          />
+
+          {/* Email */}
+          <ContactItem
+            icon={<EmailIcon />}
+            title="Email"
+            value={CONTACT.Email}
+            link={`mailto:${CONTACT.Email}`}
+            theme={theme}
+          />
+
+          {/* Address */}
+          <ContactItem
+            icon={<AddLocationIcon />}
+            title="Address"
+            value={CONTACT.Address}
+            link="https://www.google.com/maps/place/Bhavnagar+Dental+%26+Implant+Hospital/@21.7445474,72.1476615,17z/data=!3m1!4b1!4m6!3m5!1s0x395f5b7643267981:0xd619a524803753b7!8m2!3d21.7445474!4d72.1476615!16s%2Fg%2F11q3514c8l!5m1!1e4?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D"
+            theme={theme}
           />
         </Box>
-        <h2 style={{ marginLeft: '10%', fontWeight: '800' }}>Drop Us Message for Any Query</h2>
-        <Box
-          component="form"
-          sx={{
-            '& > :not(style)': { m: 1 },
-            // width: '100vw',
-            marginLeft: '10%',
-            marginRight: '10%',
-            // display: 'flex',
-            // justifyContent: 'center',
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <form action={`https://formsubmit.co/${CONTACT.Email}`} method="POST">
-              <Box sx={{ display: 'flex', marginBottom: '15px' }}>
-                <TextField
-                  id="name"
-                  name="name"
-                  label="Name"
-                  sx={{
-                    width: '50%',
-                    marginRight: '10px',
-                    boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2);',
-                    backgroundColor: 'white',
-                    borderRadius: 1,
-                    '& .MuiOutlinedInput-notchedOutline': {
-                      border: 'none',
-                    },
-                  }}
-                  required
-                />
-                <TextField
-                  id="email"
-                  name="email"
-                  label="Email"
-                  type="email"
-                  sx={{
-                    width: '50%',
-                    boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2);',
-                    backgroundColor: 'white',
-                    borderRadius: 1,
-                    '& .MuiOutlinedInput-notchedOutline': {
-                      border: 'none',
-                    },
-                  }}
-                />
-              </Box>
-
-              <Box sx={{ display: 'flex', marginBottom: '15px' }}>
-                <TextField
-                  id="phone"
-                  name="phone"
-                  label="Phone"
-                  sx={{
-                    width: '50%',
-                    marginRight: '10px',
-                    boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2);',
-                    backgroundColor: 'white',
-                    borderRadius: 1,
-                    '& .MuiOutlinedInput-notchedOutline': {
-                      border: 'none',
-                    },
-                  }}
-                  required
-                />
-                <TextField
-                  id="address"
-                  name="address"
-                  label="Address"
-                  sx={{
-                    width: '50%',
-                    boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2);',
-                    backgroundColor: 'white',
-                    borderRadius: 1,
-                    '& .MuiOutlinedInput-notchedOutline': {
-                      border: 'none',
-                    },
-                  }}
-                />
-              </Box>
-
-              <Box sx={{ marginBottom: '15px' }}>
-                <TextField
-                  id="message"
-                  name="message"
-                  label="Message"
-                  multiline
-                  rows={4}
-                  sx={{
-                    width: '100%',
-                    boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2);',
-                    backgroundColor: 'white',
-                    borderRadius: 1,
-                    '& .MuiOutlinedInput-notchedOutline': {
-                      border: 'none',
-                    },
-                  }}
-                />
-              </Box>
-
-              {/* FormSubmit Anti-Spam Hidden Input (optional but recommended) */}
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="box" />
-              <input type="hidden" name="_next" value="http://localhost:5174/ContactUs" />
-
-              <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: '15px' }}>
-                <Button
-                  type="submit"
-                  style={{
-                    backgroundColor: theam.palette.primary.light,
-                    color: theam.palette.primary.contrastText,
-                  }}
-                >
-                  Send Message
-                </Button>
-              </Box>
-            </form>
-            <Box>
-              <Box sx={{ display: 'flex', marginBottom: '1rem' }}>
-                <Box
-                  sx={{
-                    height: '70px',
-                    width: '70px',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    // boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2);',
-                    backgroundColor: theam.palette.primary.light,
-                  }}
-                >
-                  <AddCallIcon />
-                </Box>
-                <Box sx={{ marginLeft: '15px' }}>
-                  <Typography sx={{ fontWeight: '700' }}>Phone</Typography>
-                  <a
-                    href={`tel:${CONTACT.Mobile}`}
-                    style={{ textDecoration: 'none', color: theam.palette.primary.light }}
-                  >
-                    {CONTACT.Mobile}
-                  </a>
-                </Box>
-              </Box>
-              <Box sx={{ display: 'flex', marginBottom: '1rem' }}>
-                <Box
-                  sx={{
-                    height: '70px',
-                    width: '70px',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    // boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2);',
-                    backgroundColor: theam.palette.primary.light,
-                  }}
-                >
-                  <EmailIcon />
-                </Box>
-                <Box sx={{ marginLeft: '15px' }}>
-                  <Typography sx={{ fontWeight: '700' }}>Email</Typography>
-                  <a
-                    href={`mailto:${CONTACT.Email}`}
-                    style={{ textDecoration: 'none', color: theam.palette.primary.light }}
-                  >
-                    {CONTACT.Email}
-                  </a>
-                </Box>
-              </Box>
-              <Box sx={{ display: 'flex' }}>
-                <Box
-                  sx={{
-                    height: '70px',
-                    width: '70px',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    // boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2);',
-                    backgroundColor: theam.palette.primary.light,
-                  }}
-                >
-                  <AddLocationIcon />
-                </Box>
-                <Box sx={{ marginLeft: '15px' }}>
-                  <Typography sx={{ fontWeight: '700' }}>Address</Typography>
-                  <Typography
-                    style={{ textDecoration: 'none', color: theam.palette.primary.light }}
-                  >
-                    {CONTACT.Address}
-                  </Typography>
-                </Box>
-              </Box>
-            </Box>
-          </Box>
-        </Box>
       </Box>
-    </>
+      {/* </Container> */}
+    </Box>
   );
 }
+
+/* ================= REUSABLE COMPONENT ================= */
+import { ReactNode } from 'react';
+
+interface ContactItemProps {
+  icon: ReactNode;
+  title: string;
+  value: string;
+  link?: string;
+  theme: unknown; // or Theme (better, see below)
+}
+
+function ContactItem({ icon, title, value, link }: ContactItemProps) {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        mb: 3,
+      }}
+    >
+      <Box
+        sx={{
+          height: 60,
+          width: 60,
+          borderRadius: '50%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: 'theme.palette.primary.light',
+          // color: 'theme.palette.primary.light',
+          flexShrink: 0,
+        }}
+      >
+        {icon}
+      </Box>
+
+      <Box sx={{ ml: 2 }}>
+        <Typography sx={{ fontWeight: 700 }}>{title}</Typography>
+
+        {link ? (
+          <a
+            href={link}
+            style={{
+              textDecoration: 'none',
+              color: 'theme.palette.primary.light',
+            }}
+          >
+            {value}
+          </a>
+        ) : (
+          <Typography sx={{ color: 'theme.palette.primary.light' }}>{value}</Typography>
+        )}
+      </Box>
+    </Box>
+  );
+}
+
+/* ================= COMMON INPUT STYLE ================= */
+
+const inputStyle = {
+  boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+  backgroundColor: '#fff',
+  borderRadius: 1,
+  '& .MuiOutlinedInput-notchedOutline': {
+    border: 'none',
+  },
+};

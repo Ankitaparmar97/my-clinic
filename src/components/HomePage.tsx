@@ -3,24 +3,17 @@ import Gallery from './Gallery';
 import ContactUs from './ContactUs';
 import Carouselicon from './CarouselIcon';
 import Dentalservices from './Dentalservices';
+import { Box } from '@mui/material';
 
 function HomePage() {
   return (
-    <div>
+    <Box sx={{ width: '100%', overflowX: 'hidden'}}>
       <Carouselicon />
-      <div>
-        <AboutUs />
-      </div>
-      <div>
-        <Gallery />
-      </div>
-      <div>
-        <Dentalservices />
-      </div>
-      <div>
-        <ContactUs />
-      </div>
-    </div>
+      <AboutUs />
+      <Gallery />
+      <Dentalservices />
+      <ContactUs />
+    </Box>
   );
 }
 

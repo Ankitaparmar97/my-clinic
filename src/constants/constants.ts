@@ -1,6 +1,7 @@
 export const CONTACT = {
   Email: 'parmarbhautik9499@gmail.com',
   Mobile: '+918949706317',
+  Whatsapp: '+919909508292',
   Address:
     'C27, Bhavnagar Dental Hospital , Near lakhubhaihall, Opp. Om plaza, Kaliyabid, Bhavnagar-364001',
   AddressLink:

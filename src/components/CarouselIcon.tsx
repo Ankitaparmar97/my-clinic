@@ -1,12 +1,13 @@
 import Carousel from 'react-material-ui-carousel';
-import { Paper } from '@mui/material';
+import { Paper, Box, Typography, useMediaQuery } from '@mui/material';
 import Button from './Button';
 import { motion } from 'framer-motion';
 import { useTheme } from '@mui/material/styles';
 import { HOSPITAL_NAME } from '../constants';
 
 function Example() {
-  const theam = useTheme();
+  const theme = useTheme();
+
   const items: CarouselItem[] = [
     {
       name: HOSPITAL_NAME,
@@ -23,13 +24,13 @@ function Example() {
     {
       name: 'Root Canal',
       description:
-        'A root canal is the normal pit inside the foundations of the tooth. A root canal treatment is the treatment of the tooth root.This procedure helps to save a badly infected or damaged tooth from extraction',
+        'A root canal treatment helps to save a badly infected or damaged tooth from extraction.',
       image: 'smile.jpg',
     },
     {
       name: 'Teeth Cleaning',
       description:
-        'Teeth cleaning is a standard dental methodology. We prompt our patients for a customary teeth cleaning like clockwork to 1 year. Other than that, anybody with a stained teeth, awful breath or draining gums ought to quickly complete a teeth cleaning.',
+        'We recommend regular teeth cleaning every 6 months to 1 year to maintain oral hygiene.',
       image: 'l-teeth.jpg',
     },
   ];
@@ -38,18 +39,17 @@ function Example() {
     <Carousel
       animation="slide"
       indicators={false}
-      navButtonsAlwaysVisible={true}
+      navButtonsAlwaysVisible
       navButtonsProps={{
         style: {
-          backgroundColor: theam.palette.background.paper,
-          color: theam.palette.text.primary,
+          backgroundColor: theme.palette.background.paper,
+          color: theme.palette.text.primary,
         },
       }}
-      swipe={false}
+      swipe
       fullHeightHover={false}
-      cycleNavigation={true}
     >
-      {items.map((item: CarouselItem) => (
+      {items.map((item) => (
         <Item key={item.image} item={item} />
       ))}
     </Carousel>
@@ -63,66 +63,83 @@ type CarouselItem = {
 };
 
 function Item({ item }: { item: CarouselItem }) {
-  const theam = useTheme();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Paper
-      style={{
-        paddingLeft: 130,
-        // marginLeft: '8.125rem',
-        // marginRight: '8.125rem',
-        textAlign: 'center',
+      sx={{
+        // px: { xs: 2, sm: 4, md: 8, lg: 12 },
+        // py: { xs: 3, sm: 4 },
+        textAlign: { xs: 'center', md: 'left' },
         backgroundImage: `url(${item.image})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: 'calc(100vh - 240px)',
+        height: { xs: '60vh', sm: '70vh', md: '80vh' },
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
+        // borderRadius: 2,
         position: 'relative',
-        borderRadius: 8,
       }}
     >
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'flex-start',
-          textAlign: 'left',
-          color: theam.palette.primary.main,
-          marginTop: '0px',
-          marginBottom: '0px',
+      {/* Overlay for readability */}
+      <Box
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          background: 'rgba(0,0,0,0.4)',
+          // borderRadius: 2,
         }}
-      >
-        {item.name}
-      </motion.h1>
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'flex-start',
-          textAlign: 'left',
-          width: '40%',
-          color: theam.palette.text.primary,
-        }}
-      >
-        {item.description}
-      </motion.p>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-      >
-        <Button />
-      </motion.div>
+      />
+
+      <Box sx={{ position: 'relative', zIndex: 1, paddingLeft: { xs: 2, sm: 4, md: 16 }, paddingBottom: {xs: 1, md: 10}}}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Typography
+            variant={isMobile ? 'h5' : 'h3'}
+            sx={{
+              color: '#fff',
+              mb: 1,
+            }}
+          >
+            {item.name}
+          </Typography>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <Typography
+            sx={{
+              width: { xs: '100%', sm: '80%', md: '50%' },
+              color: '#fff',
+              mb: 2,
+              fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
+            }}
+          >
+            {item.description}
+          </Typography>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+           style={{
+    display: 'flex',
+    justifyContent: isMobile ? 'center' : 'flex-start',
+    width: '100%',
+  }}
+        >
+          <Button />
+        </motion.div>
+      </Box>
     </Paper>
   );
 }

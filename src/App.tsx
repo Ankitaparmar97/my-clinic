@@ -3,12 +3,18 @@ import Banner from './components/Banner';
 import Nav from './components/Nav';
 import { useTheme } from '@mui/material/styles';
 import FooterPage from './components/FooterPage';
+import { CONTACT } from './constants';
+import React from 'react';
 
 function App() {
+  const [, setDrawerOpen] = React.useState(false);
+
+  const toggleDrawer = (open: boolean) => () => {
+    setDrawerOpen(open);
+  };
   const theam = useTheme();
-  const phoneNumber = '919426549472';
   const message = 'Hello!';
-  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const whatsappLink = `https://wa.me/${CONTACT.Whatsapp}?text=${encodeURIComponent(message)}`;
   return (
     <>
       <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
@@ -24,7 +30,7 @@ function App() {
           }}
         ></img>
       </a>
-      <a href={`tel:${phoneNumber}`}>
+      <a href={`tel:${CONTACT.Mobile}}`}>
         <img
           src="/telephone.png"
           style={{
@@ -39,7 +45,7 @@ function App() {
       </a>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch' }}>
         <Banner />
-        <Header />
+        <Header toggleDrawer={toggleDrawer} />
       </div>
       <Nav />
       <FooterPage />

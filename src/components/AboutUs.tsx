@@ -6,133 +6,180 @@ import Achieve from './Achievement';
 import { HOSPITAL_NAME } from '../constants';
 
 function AboutUs() {
-  const theam = useTheme();
-  const imgSrc = theam.palette.mode === 'dark' ? '/medical-symbol2.png' : '/medical-symbol.png';
+  const theme = useTheme();
 
-  const imgsrc = theam.palette.mode === 'dark' ? '/dentist-chair2.png' : '/dentist-chair.png';
+  const imgSrc = theme.palette.mode === 'dark' ? '/medical-symbol2.png' : '/medical-symbol.png';
+
+  const imgsrc = theme.palette.mode === 'dark' ? '/dentist-chair2.png' : '/dentist-chair.png';
+
   return (
-    <>
-      <Box sx={{ backgroundColor: theam.palette.background.default }}>
-        <h2
-          style={{
+    <Box
+      sx={{
+        width: '100%',
+        backgroundColor: theme.palette.background.default,
+        // mt: { xs: '9rem', sm: '10rem', md: '13rem' },
+        px: { xs: 2, sm: 4, md: 16 },
+      }}
+    >
+      {/* Heading */}
+      <h2
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        About Us
+      </h2>
+
+      {/* Main Section */}
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          flexDirection: { xs: 'column', md: 'row' },
+          gap: 4,
+        }}
+      >
+        {/* LEFT CONTENT */}
+        <Box sx={{ flex: 1 }}>
+          <Typography
+            sx={{
+              color: theme.palette.primary.light,
+              fontSize: { xs: '1.2rem', md: '1.5rem' },
+              fontWeight: 700,
+              mb: 2,
+            }}
+          >
+            {HOSPITAL_NAME}
+          </Typography>
+
+          <Typography
+            sx={{
+              fontFamily: 'poppins, sans-serif',
+              color: theme.palette.text.secondary,
+              fontSize: { xs: '0.9rem', md: '1rem' },
+              mb: 3,
+            }}
+          >
+            We have been at the forefront of dental healthcare, committed to providing world-class
+            dental treatments in a friendly and comfortable environment. We offer comprehensive
+            dental services tailored to each patient.
+          </Typography>
+
+          {/* SERVICES */}
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: { xs: 'column', sm: 'row' },
+              gap: 4,
+            }}
+          >
+            {/* COLUMN 1 */}
+            <Box>
+              {['Dental Implant', 'Dental Bridge Treatment', 'Root Canal Treatment'].map((item) => (
+                <Box key={item} sx={{ display: 'flex', mb: 2 }}>
+                  <CheckCircleIcon sx={{ color: theme.palette.primary.light }} />
+                  <Typography ml={1}>{item}</Typography>
+                </Box>
+              ))}
+
+              {/* EXPERIENCE */}
+              <Box sx={{ display: 'flex', alignItems: 'center', mt: 2 }}>
+                <Box
+                  sx={{
+                    height: 60,
+                    width: 60,
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
+                  }}
+                >
+                  <img src={imgSrc} width="30" />
+                </Box>
+
+                <Box ml={2}>
+                  <Typography fontSize="1.5rem" fontWeight={600}>
+                    5 years
+                  </Typography>
+                  <Typography fontSize="0.9rem">Dental Experience</Typography>
+                </Box>
+              </Box>
+            </Box>
+
+            {/* COLUMN 2 */}
+            <Box>
+              {['Teeth Whitening', 'Smile Designing', 'Routine Checkup'].map((item) => (
+                <Box key={item} sx={{ display: 'flex', mb: 2 }}>
+                  <CheckCircleIcon sx={{ color: theme.palette.primary.light }} />
+                  <Typography ml={1}>{item}</Typography>
+                </Box>
+              ))}
+
+              {/* SERVICES COUNT */}
+              <Box sx={{ display: 'flex', alignItems: 'center', mt: 2 }}>
+                <Box
+                  sx={{
+                    height: 60,
+                    width: 60,
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
+                  }}
+                >
+                  <img src={imgsrc} width="30" />
+                </Box>
+
+                <Box ml={2}>
+                  <Typography fontSize="1.5rem" fontWeight={600}>
+                    1800+
+                  </Typography>
+                  <Typography fontSize="0.9rem">Dental Services</Typography>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+
+        {/* RIGHT IMAGE */}
+        <Box
+          sx={{
+            flex: 1,
             display: 'flex',
             justifyContent: 'center',
           }}
         >
-          About Us
-        </h2>
-        <Box sx={{ display: 'flex', width: '100%' }}>
-          <Box sx={{ width: '60%', marginTop: '3rem' }}>
-            <Box
-              style={{
-                color: theam.palette.primary.light,
-                marginLeft: '8.125rem',
-                fontSize: '1.5rem',
-                fontWeight: '700',
-              }}
-            >
-              {HOSPITAL_NAME}
-            </Box>
-            <p
-              style={{
-                fontFamily: 'poppins, sans-serif',
-                color: theam.palette.text.secondary,
-                marginLeft: '8.125rem',
-                fontSize: '1rem',
-              }}
-            >
-              We have been at the forefront of dental healthcare, committed to providing world-class
-              dental treatments in a friendly and most comfortable environment. We offer the best in
-              comprehensive dental services and recognize the importance of each patient's unique
-              needs and concerns while staying committed to providing quality and individualized
-              dental services
-            </p>
-            <Box sx={{ display: 'flex', marginLeft: '8.125rem' }}>
-              <Box>
-                <Box sx={{ display: 'flex', marginBottom: '18px' }}>
-                  <CheckCircleIcon sx={{ color: theam.palette.primary.light }}></CheckCircleIcon>
-                  <Typography sx={{ marginLeft: '10px' }}>Dental Implant</Typography>
-                </Box>
-                <Box sx={{ display: 'flex', marginBottom: '18px' }}>
-                  <CheckCircleIcon sx={{ color: theam.palette.primary.light }}></CheckCircleIcon>
-                  <Typography sx={{ marginLeft: '10px' }}>Dental Bridge Treatment</Typography>
-                </Box>
-                <Box sx={{ display: 'flex', marginBottom: '18px' }}>
-                  <CheckCircleIcon sx={{ color: theam.palette.primary.light }}></CheckCircleIcon>
-                  <Typography sx={{ marginLeft: '10px' }}>Root Canal Treatment</Typography>
-                </Box>
-                <Box sx={{ display: 'flex' }}>
-                  <Box
-                    sx={{
-                      height: '70px',
-                      width: '70px',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2);',
-                    }}
-                  >
-                    <img src={imgSrc} />
-                  </Box>
-                  <Box sx={{ marginLeft: '15px' }}>
-                    <Typography sx={{ fontSize: '2rem', fontWeight: '500' }}>5 years</Typography>
-                    <Typography>Dental Exprienced</Typography>
-                  </Box>
-                </Box>
-              </Box>
-              <Box sx={{ marginLeft: '100px' }}>
-                <Box sx={{ display: 'flex', marginBottom: '18px' }}>
-                  <CheckCircleIcon sx={{ color: theam.palette.primary.light }}></CheckCircleIcon>
-                  <Typography sx={{ marginLeft: '10px' }}>Teeth Whitining</Typography>
-                </Box>
-                <Box sx={{ display: 'flex', marginBottom: '18px' }}>
-                  <CheckCircleIcon sx={{ color: theam.palette.primary.light }}></CheckCircleIcon>
-                  <Typography sx={{ marginLeft: '10px' }}>Smile desining</Typography>
-                </Box>
-                <Box sx={{ display: 'flex', marginBottom: '18px' }}>
-                  <CheckCircleIcon sx={{ color: theam.palette.primary.light }}></CheckCircleIcon>
-                  <Typography sx={{ marginLeft: '10px' }}>Routine Checkup </Typography>
-                </Box>
-                <Box sx={{ display: 'flex' }}>
-                  <Box
-                    sx={{
-                      height: '70px',
-                      width: '70px',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2);',
-                    }}
-                  >
-                    <img src={imgsrc} />
-                  </Box>
-                  <Box sx={{ marginLeft: '15px' }}>
-                    <Typography sx={{ fontSize: '2rem', fontWeight: '500' }}>1800+</Typography>
-                    <Typography>Dental services</Typography>
-                  </Box>
-                </Box>
-              </Box>
-            </Box>
-          </Box>
-          <Box sx={{ width: '40%', overflow: 'hidden', marginRight: '8.125rem' }}>
-            <img src="/bhavnagar-clinic.jpg" style={{ height: '600px', paddingLeft: '40px' }} />
-          </Box>
-        </Box>
-        <Typography
-          fontWeight={700}
-          fontSize={'2rem'}
-          marginLeft={'8.125rem'}
-          marginBottom={'20px'}
-        >
-          Our Achievements
-        </Typography>
-        <Box>
-          <Achieve />
+          <Box
+            component="img"
+            src="/bhavnagar-clinic.jpg"
+            sx={{
+              width: '100%',
+              maxWidth: { xs: '100%', sm: '400px', md: '565.5px' },
+              height: { xs: 'auto', sm: 'auto', md: '550px' },
+              borderRadius: 2,
+            }}
+          />
         </Box>
       </Box>
-    </>
+
+      {/* ACHIEVEMENTS */}
+      <Typography fontWeight={700} fontSize={{ xs: '1.5rem', md: '2rem' }} mt={6} mb={2}>
+        Our Achievements
+      </Typography>
+      {/* <h2
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-start',
+        }}
+      >
+        Our Achievements
+      </h2> */}
+
+      <Achieve />
+    </Box>
   );
 }
 
