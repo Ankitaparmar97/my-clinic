@@ -10,11 +10,11 @@ function CardWithImage({ src }: { src: string }) {
     <Card
       sx={{
         width: {
-          xs: '100%',   // mobile
-          sm: '48%',    // tablet
-          md: '30%',    // desktop
+          xs: '100%', // mobile
+          sm: '48%', // tablet
+          md: '30%', // desktop
           display: 'flex',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
         },
         // margin: '15px',
         backgroundColor: theme.palette.primary.main,

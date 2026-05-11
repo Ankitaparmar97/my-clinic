@@ -7,7 +7,7 @@ import { Box } from '@mui/material';
 
 function HomePage() {
   return (
-    <Box sx={{ width: '100%', overflowX: 'hidden'}}>
+    <Box sx={{ width: '100%', overflowX: 'hidden' }}>
       <Carouselicon />
       <AboutUs />
       <Gallery />

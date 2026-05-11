@@ -15,9 +15,10 @@ export default function ResponsiveAppBar({ toggleDrawer }: HeaderProps) {
       <AppBar
         position="fixed"
         sx={{
-          top: { xs: '40px', sm: '45px', md: '2.5rem' }, // 🔥 match your top bar height
-          height: { xs: '75px', sm: '80px', md: '7.5rem' }, // 🔥 smaller on mobile
+          top: { xs: '2.5rem', sm: '2.8125rem', md: '2.5rem' }, // 🔥 match your top bar height
+          height: { xs: '4.6875rem', sm: '5rem', md: '7.5rem' }, // 🔥 smaller on mobile
           justifyContent: 'center',
+          backgroundColor: theme.palette.primary.main,
         }}
       >
         <Container maxWidth="xl">

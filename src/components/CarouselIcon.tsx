@@ -64,13 +64,11 @@ type CarouselItem = {
 
 function Item({ item }: { item: CarouselItem }) {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
     <Paper
       sx={{
-        // px: { xs: 2, sm: 4, md: 8, lg: 12 },
-        // py: { xs: 3, sm: 4 },
         textAlign: { xs: 'center', md: 'left' },
         backgroundImage: `url(${item.image})`,
         backgroundSize: 'cover',
@@ -93,14 +91,21 @@ function Item({ item }: { item: CarouselItem }) {
         }}
       />
 
-      <Box sx={{ position: 'relative', zIndex: 1, paddingLeft: { xs: 2, sm: 4, md: 16 }, paddingBottom: {xs: 1, md: 10}}}>
+      <Box
+        sx={{
+          position: 'relative',
+          zIndex: 1,
+          paddingLeft: { xs: 2, sm: 4, md: 16 },
+          paddingBottom: { xs: 1, md: 10 },
+        }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <Typography
-            variant={isMobile ? 'h5' : 'h3'}
+            variant={isDesktop ? 'h3' : 'h5'}
             sx={{
               color: '#fff',
               mb: 1,
@@ -131,11 +136,11 @@ function Item({ item }: { item: CarouselItem }) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-           style={{
-    display: 'flex',
-    justifyContent: isMobile ? 'center' : 'flex-start',
-    width: '100%',
-  }}
+          style={{
+            display: 'flex',
+            justifyContent: isDesktop ? 'flex-start' : 'center',
+            width: '100%',
+          }}
         >
           <Button />
         </motion.div>

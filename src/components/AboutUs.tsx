@@ -169,14 +169,6 @@ function AboutUs() {
       <Typography fontWeight={700} fontSize={{ xs: '1.5rem', md: '2rem' }} mt={6} mb={2}>
         Our Achievements
       </Typography>
-      {/* <h2
-        style={{
-          display: 'flex',
-          justifyContent: 'flex-start',
-        }}
-      >
-        Our Achievements
-      </h2> */}
 
       <Achieve />
     </Box>

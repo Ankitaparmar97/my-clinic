@@ -4,7 +4,7 @@ import AddLocationIcon from '@mui/icons-material/AddLocation';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import AddCallIcon from '@mui/icons-material/AddCall';
-import EmailIcon from '@mui/icons-material/Email';
+// import EmailIcon from '@mui/icons-material/Email';
 import { useTheme } from '@mui/material/styles';
 import { CONTACT } from '../constants';
 
@@ -45,17 +45,31 @@ export default function ButtonAppBar() {
           <Box
             sx={{
               display: { xs: 'flex', sm: 'none' },
-              flexDirection: 'column',
+              // flexDirection: 'column',
             }}
           >
-            <Box sx={{ display: 'flex' }}>
-              <AddCallIcon sx={{ color: theam.palette.primary.light, fontSize: '1.25rem' }} />
-              <Typography sx={{ fontSize: '0.7rem' }}>{CONTACT.Mobile}</Typography>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <Box
+                sx={{
+                  height: '1.875rem',
+                  width: '1.875rem',
+                  borderRadius: '50%',
+                  backgroundColor: '#ffffff',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                <AddCallIcon sx={{ color: theam.palette.primary.light, fontSize: '1.25rem' }} />
+              </Box>
+              <Typography sx={{ fontSize: '1rem', fontWeight: '700', marginLeft: '.5rem' }}>
+                {CONTACT.Mobile}
+              </Typography>
             </Box>
-            <Box sx={{ display: 'flex' }}>
+            {/* <Box sx={{ display: 'flex' }}>
               <EmailIcon sx={{ color: theam.palette.primary.light, fontSize: '1.25rem' }} />
               <Typography sx={{ fontSize: '0.7rem' }}>{CONTACT.Email}</Typography>
-            </Box>
+            </Box> */}
           </Box>
         </Box>
 
