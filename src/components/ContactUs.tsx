@@ -35,6 +35,7 @@ export default function ContactPage() {
       {/* Map */}
       <Box
         sx={{
+          position: 'relative',
           width: '100%',
           height: { xs: '250px', md: '400px' },
           mb: 5,
@@ -50,6 +51,61 @@ export default function ContactPage() {
           }}
           loading="lazy"
         />
+
+        <Box
+          component="a"
+          href={CONTACT.MapLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Open ${HOSPITAL_NAME} in Google Maps`}
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            zIndex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            gap: 1.5,
+            width: 'max-content',
+            maxWidth: 'calc(100% - 32px)',
+            px: { xs: 1.5, sm: 2 },
+            py: 1.25,
+            borderRadius: 2,
+            backgroundColor: 'background.paper',
+            boxShadow: '0 4px 16px rgba(0, 0, 0, 0.22)',
+            color: 'text.primary',
+            textDecoration: 'none',
+            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+            '&:hover': {
+              transform: 'translate(-50%, -50%) scale(1.02)',
+              boxShadow: '0 6px 20px rgba(0, 0, 0, 0.28)',
+            },
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 48,
+              height: 48,
+              flexShrink: 0,
+              borderRadius: '50%',
+              backgroundColor: 'error.main',
+              color: 'error.contrastText',
+            }}
+          >
+            <AddLocationIcon />
+          </Box>
+
+          <Box sx={{ minWidth: 0 }}>
+            <Typography sx={{ fontWeight: 700, lineHeight: 1.3 }}>{HOSPITAL_NAME}</Typography>
+            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+              Open in Google Maps
+            </Typography>
+          </Box>
+        </Box>
       </Box>
 
       {/* Sub Heading */}
@@ -151,7 +207,7 @@ export default function ContactPage() {
             icon={<AddLocationIcon />}
             title="Address"
             value={CONTACT.Address}
-            link="https://www.google.com/maps/place/Bhavnagar+Dental+%26+Implant+Hospital/@21.7445474,72.1476615,17z/data=!3m1!4b1!4m6!3m5!1s0x395f5b7643267981:0xd619a524803753b7!8m2!3d21.7445474!4d72.1476615!16s%2Fg%2F11q3514c8l!5m1!1e4?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D"
+            link={CONTACT.MapLink}
             theme={theme}
           />
         </Box>

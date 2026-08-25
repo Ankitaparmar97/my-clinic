@@ -7,8 +7,11 @@ import {
   List,
   ListItemText,
   ListItemButton,
-  Menu,
   MenuItem,
+  MenuList,
+  Paper,
+  Popper,
+  ClickAwayListener,
 } from '@mui/material';
 import { NavLink, Routes, Route, useLocation } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
@@ -50,18 +53,33 @@ export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const timeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
-  const handleHover = (event: React.MouseEvent<HTMLElement>) => {
+
+  const clearCloseTimeout = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     }
+  };
+
+  const handleHover = (event: React.MouseEvent<HTMLElement>) => {
+    clearCloseTimeout();
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
+    clearCloseTimeout();
     timeoutRef.current = setTimeout(() => {
       setAnchorEl(null);
+      timeoutRef.current = null;
     }, 200);
   };
+
+  const closeMenu = () => {
+    clearCloseTimeout();
+    setAnchorEl(null);
+  };
+
+  React.useEffect(() => clearCloseTimeout, []);
 
   // =========================
   // MOBILE DRAWER
@@ -105,8 +123,13 @@ export default function Navbar() {
 
               {/* DROPDOWN TAB */}
               <Tab
+                id="dental-services-menu-trigger"
                 value="/Dentalservices"
                 onMouseEnter={handleHover}
+                onMouseLeave={handleClose}
+                aria-controls={open ? 'dental-services-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
                 label={
                   <span style={{ display: 'flex', alignItems: 'center' }}>
                     Dental Services
@@ -136,84 +159,84 @@ export default function Navbar() {
       </Box>
 
       {/* DESKTOP DROPDOWN MENU */}
-      <Menu
+      <Popper
+        id="dental-services-menu"
         anchorEl={anchorEl}
         open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          onMouseEnter: () => {
-            if (timeoutRef.current) {
-              clearTimeout(timeoutRef.current);
-            }
-          },
-          onMouseLeave: handleClose,
-        }}
+        placement="bottom-start"
+        sx={{ zIndex: theme.zIndex.modal }}
       >
-        <MenuItem
-          sx={{ backgroundColor: theme.palette.primary.light }}
-          component={NavLink}
-          to="/Dentalservices#bridge-treatment"
-          onClick={handleClose}
-        >
-          Dental Bridge Treatment
-        </MenuItem>
-        <MenuItem
-          sx={{ backgroundColor: theme.palette.primary.light }}
-          component={NavLink}
-          to="/Dentalservices#implants"
-          onClick={handleClose}
-        >
-          Dental Implants
-        </MenuItem>
-        <MenuItem
-          sx={{ backgroundColor: theme.palette.primary.light }}
-          component={NavLink}
-          to="/Dentalservices#teeth-cleaning"
-          onClick={handleClose}
-        >
-          Teeth Cleaning
-        </MenuItem>
-        <MenuItem
-          sx={{ backgroundColor: theme.palette.primary.light }}
-          component={NavLink}
-          to="/Dentalservices#root-canal"
-          onClick={handleClose}
-        >
-          Root Canal Treatment
-        </MenuItem>
-        <MenuItem
-          sx={{ backgroundColor: theme.palette.primary.light }}
-          component={NavLink}
-          to="/Dentalservices#child-treatment"
-          onClick={handleClose}
-        >
-          Child Teeth Treatment
-        </MenuItem>
-        <MenuItem
-          sx={{ backgroundColor: theme.palette.primary.light }}
-          component={NavLink}
-          to="/Dentalservices#smile-designing"
-          onClick={handleClose}
-        >
-          Smile designing
-        </MenuItem>
-        <MenuItem
-          sx={{ backgroundColor: theme.palette.primary.light }}
-          component={NavLink}
-          to="/Dentalservices#denture"
-          onClick={handleClose}
-        >
-          Denture
-        </MenuItem>
-        <MenuItem
-          sx={{ backgroundColor: theme.palette.primary.light }}
-          component={NavLink}
-          to="/Dentalservices#wth"
-          onClick={handleClose}
-        >
-          Wisdom Tooth Removal
-        </MenuItem>
-      </Menu>
+        <ClickAwayListener onClickAway={closeMenu}>
+          <Paper onMouseEnter={clearCloseTimeout} onMouseLeave={handleClose} elevation={8}>
+            <MenuList aria-labelledby="dental-services-menu-trigger">
+              <MenuItem
+                sx={{ backgroundColor: theme.palette.primary.light }}
+                component={NavLink}
+                to="/Dentalservices#bridge-treatment"
+                onClick={closeMenu}
+              >
+                Dental Bridge Treatment
+              </MenuItem>
+              <MenuItem
+                sx={{ backgroundColor: theme.palette.primary.light }}
+                component={NavLink}
+                to="/Dentalservices#implants"
+                onClick={closeMenu}
+              >
+                Dental Implants
+              </MenuItem>
+              <MenuItem
+                sx={{ backgroundColor: theme.palette.primary.light }}
+                component={NavLink}
+                to="/Dentalservices#teeth-cleaning"
+                onClick={closeMenu}
+              >
+                Teeth Cleaning
+              </MenuItem>
+              <MenuItem
+                sx={{ backgroundColor: theme.palette.primary.light }}
+                component={NavLink}
+                to="/Dentalservices#root-canal"
+                onClick={closeMenu}
+              >
+                Root Canal Treatment
+              </MenuItem>
+              <MenuItem
+                sx={{ backgroundColor: theme.palette.primary.light }}
+                component={NavLink}
+                to="/Dentalservices#child-treatment"
+                onClick={closeMenu}
+              >
+                Child Teeth Treatment
+              </MenuItem>
+              <MenuItem
+                sx={{ backgroundColor: theme.palette.primary.light }}
+                component={NavLink}
+                to="/Dentalservices#smile-designing"
+                onClick={closeMenu}
+              >
+                Smile designing
+              </MenuItem>
+              <MenuItem
+                sx={{ backgroundColor: theme.palette.primary.light }}
+                component={NavLink}
+                to="/Dentalservices#denture"
+                onClick={closeMenu}
+              >
+                Denture
+              </MenuItem>
+              <MenuItem
+                sx={{ backgroundColor: theme.palette.primary.light }}
+                component={NavLink}
+                to="/Dentalservices#wth"
+                onClick={closeMenu}
+              >
+                Wisdom Tooth Removal
+              </MenuItem>
+            </MenuList>
+          </Paper>
+        </ClickAwayListener>
+      </Popper>
 
       {/* MOBILE DRAWER */}
       <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>

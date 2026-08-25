@@ -149,7 +149,7 @@ function AboutUs() {
           sx={{
             flex: 1,
             display: 'flex',
-            justifyContent: 'center',
+            justifyContent: 'flex-end',
           }}
         >
           <Box
@@ -159,6 +159,7 @@ function AboutUs() {
               width: '100%',
               maxWidth: { xs: '100%', sm: '400px', md: '565.5px' },
               height: { xs: 'auto', sm: 'auto', md: '550px' },
+              display: 'block',
               borderRadius: 2,
             }}
           />

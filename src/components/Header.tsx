@@ -1,4 +1,4 @@
-import { AppBar, Box, Container, IconButton, Toolbar, useTheme } from '@mui/material';
+import { AppBar, Box, IconButton, Toolbar, useTheme } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -21,58 +21,58 @@ export default function ResponsiveAppBar({ toggleDrawer }: HeaderProps) {
           backgroundColor: theme.palette.primary.main,
         }}
       >
-        <Container maxWidth="xl">
-          <Toolbar
-            disableGutters
-            sx={{
-              px: { md: 13 },
-              display: 'flex',
-              justifyContent: 'space-between',
-            }}
-          >
-            {/* LEFT SIDE */}
-            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
-              <Box
-                component="img"
-                src="/header-teeth.png"
+        <Toolbar
+          disableGutters
+          sx={{
+            width: '100%',
+            boxSizing: 'border-box',
+            px: { xs: 2, sm: 4, md: 16 },
+            display: 'flex',
+            justifyContent: 'space-between',
+          }}
+        >
+          {/* LEFT SIDE */}
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
+            <Box
+              component="img"
+              src="/header-teeth.png"
+              sx={{
+                maxHeight: { xs: '100px', md: '160px' },
+              }}
+            />
+            <Box>
+              <Typography
                 sx={{
-                  maxHeight: { xs: '100px', md: '160px' },
+                  fontFamily: theme.typography.fontFamily,
+                  fontWeight: 700,
+                  letterSpacing: '0.08em',
+                  fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2.2rem' },
+                  lineHeight: 1.1,
                 }}
-              />
-              <Box>
-                <Typography
-                  sx={{
-                    fontFamily: theme.typography.fontFamily,
-                    fontWeight: 700,
-                    letterSpacing: '0.08em',
-                    fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2.2rem' },
-                    lineHeight: 1.1,
-                  }}
-                >
-                  BHAVNAGAR
-                </Typography>
+              >
+                BHAVNAGAR
+              </Typography>
 
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    letterSpacing: '0.1em',
-                    fontSize: { xs: '0.5rem', sm: '0.85rem', md: '1rem' },
-                    opacity: 0.9,
-                  }}
-                >
-                  DENTAL & IMPLANT CLINIC
-                </Typography>
-              </Box>
+              <Typography
+                sx={{
+                  fontWeight: 400,
+                  letterSpacing: '0.1em',
+                  fontSize: { xs: '0.5rem', sm: '0.85rem', md: '1rem' },
+                  opacity: 0.9,
+                }}
+              >
+                DENTAL & IMPLANT CLINIC
+              </Typography>
             </Box>
+          </Box>
 
-            {/* RIGHT SIDE MOBILE MENU */}
-            {isMobile && (
-              <IconButton color="inherit" onClick={toggleDrawer(true)} sx={{ padding: '0' }}>
-                <MenuIcon />
-              </IconButton>
-            )}
-          </Toolbar>
-        </Container>
+          {/* RIGHT SIDE MOBILE MENU */}
+          {isMobile && (
+            <IconButton color="inherit" onClick={toggleDrawer(true)} sx={{ padding: '0' }}>
+              <MenuIcon />
+            </IconButton>
+          )}
+        </Toolbar>
       </AppBar>
     </Box>
   );
