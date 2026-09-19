@@ -9,8 +9,8 @@ loads `/src/main.tsx` directly, which GitHub Pages sends as
 1. In **GitHub → Settings → Pages**, change **Build and deployment → Source** to
    **GitHub Actions**. Keep the custom domain set to
    `bhavnagardental.pixelavenue.in`.
-2. Commit and push `.github/workflows/publish-pages.yml` to `master`.
-3. From your terminal, run `gh workflow run publish-pages.yml --ref master`.
+2. Commit and push `.github/workflows/static.yml` to `master`.
+3. From your terminal, run `gh workflow run static.yml --ref master`.
    You can also run **Publish GitHub Pages** manually from the Actions tab.
 4. When the workflow finishes, verify that the live page loads a
    `/assets/*.js` script rather than `/src/main.tsx`.
