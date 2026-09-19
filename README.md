@@ -1,5 +1,23 @@
 # ⚛️ React + 🟦 TypeScript + ⚡️ Vite
 
+## Publish to GitHub Pages
+
+The site must serve the compiled files from `dist/`. Serving the repository root
+loads `/src/main.tsx` directly, which GitHub Pages sends as
+`application/octet-stream` and browsers reject as a module.
+
+1. In **GitHub → Settings → Pages**, change **Build and deployment → Source** to
+   **GitHub Actions**. Keep the custom domain set to
+   `bhavnagardental.pixelavenue.in`.
+2. Commit and push `.github/workflows/publish-pages.yml` to `master`.
+3. From your terminal, run `gh workflow run publish-pages.yml --ref master`.
+   You can also run **Publish GitHub Pages** manually from the Actions tab.
+4. When the workflow finishes, verify that the live page loads a
+   `/assets/*.js` script rather than `/src/main.tsx`.
+
+This workflow only runs when manually started. It builds with `npm ci` and
+`npm run build`, then publishes `dist/` to Pages.
+
 ## 🛠️ Makefile Commands
 
 The following make commands help streamline development tasks:
